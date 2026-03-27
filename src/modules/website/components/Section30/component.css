@@ -1,0 +1,94 @@
+/* =============================================
+   PAGE HERO HEADER — White Minimal Style
+   (Matches reference design)
+   ============================================= */
+
+.page-hero-section {
+  width: 100%;
+  margin-top: 76px;
+  background: #ffffff;
+  padding: 70px 80px 64px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.page-hero-inner {
+  max-width: 860px;
+}
+
+/* ---------- Breadcrumb ---------- */
+.page-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+}
+
+.breadcrumb-link {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #111;
+}
+
+.breadcrumb-arrow {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1;
+}
+
+.breadcrumb-current {
+  color: #555;
+  font-weight: 500;
+}
+
+/* ---------- Main Title ---------- */
+.page-hero-title {
+  font-size: clamp(36px, 5.5vw, 60px);
+  font-weight: 800;
+  color: #111111;
+  line-height: 1.12;
+  letter-spacing: -1px;
+  margin: 0 0 32px;
+}
+
+/* ---------- Blockquote Subtitle ---------- */
+.page-hero-quote {
+  border-left: 3px solid #1CB89E;
+  padding-left: 20px;
+  max-width: 560px;
+}
+
+.page-hero-quote p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .page-hero-section {
+    padding: 56px 40px 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-hero-section {
+    padding: 48px 24px 40px;
+  }
+
+  .page-hero-title {
+    font-size: 34px;
+    letter-spacing: -0.5px;
+  }
+
+  .page-hero-quote p {
+    font-size: 14px;
+  }
+}

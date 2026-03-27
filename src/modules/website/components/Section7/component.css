@@ -1,0 +1,126 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.dark-theme-section {
+    background-color: transparent;
+    padding: 80px 0;
+}
+
+.what_we_offer {
+    color: #a450ff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.top_about {
+    margin-top: 0;
+}
+
+.about_title_heading {
+    font-size: 46px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #ffffff 0%, #a450ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.divider-line {
+    height: 4px;
+    width: 60px;
+    background: #43baff;
+    border-radius: 2px;
+    margin-bottom: 30px;
+}
+
+.about_titel {
+    color: #a9a9b3;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    margin-top: 0;
+    line-height: 1.8;
+}
+
+.highlight-text {
+    color: #43baff;
+    font-size: 18px;
+}
+
+.about_titel1 {
+    color: #e2e2e2;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    line-height: 30px;
+}
+
+.image-grid-wrapper {
+    position: relative;
+}
+
+.grid-img {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.grid-img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(67, 186, 255, 0.3);
+}
+
+.silhoiuette_img {
+    margin-top: 40px;
+}
+
+.join_img {
+    margin-top: 40px;
+    filter: none;
+}
+
+@media (max-width: 680px) {
+    body {
+        flex-direction: column;
+    }
+}
+
+@media(max-width:768px) {
+    .dark-theme-section {
+        padding: 50px 0;
+    }
+
+    .top_about {
+        margin-top: 0;
+    }
+
+    .about_title_heading {
+        font-size: 32px;
+        margin-top: 20px;
+    }
+
+    .about_titel {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .about_titel1 {
+        font-size: 15px;
+    }
+
+    .my_reveers {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
