@@ -6,6 +6,7 @@ import Section1 from "../../components/Section1/Component";
 import Section2 from "../../components/Section2/Component";
 import Section3 from "../../components/Section3/Component";
 import Section5 from "../../components/Section5/Component";
+import VideoSection from "../../components/VideoSection/Component";
 import Footer from "../../components/Footer/Footer";
 
 function Home() {
@@ -28,6 +29,7 @@ function Home() {
       <Nav />
       <Section />
       <Section1 />
+      <VideoSection />
       <Section2 />
       <Section3 />
       <Section5 />

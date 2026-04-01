@@ -1,193 +1,96 @@
-.web_line{
-    height:2px;
-    background:black;
-    margin:0;
-    border:none;
-    width:270px;
-}
-.web_top{
-    margin-top:70px;
-}
-.Website_heading{
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  color:#e0e0e0;
+/* =============================================
+   UNIFIED SERVICE INTRO — Dark Premium
+   ============================================= */
 
-}
-.Website_sub{
-  color:#e0e0e0;
- font-size: 22px;
- font-weight: 500;
- margin-bottom: 2px;
- letter-spacing:1px;
- margin-top:30px;
-}
-.Website_heading1{
- font-size: 28px;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  color:#e0e0e0;
-}
- .web_top1{
-    margin-top:50px;
- }
- .web_line1{
- height:2px !important;
-    background:black;
-    margin:0;
-    border:none;
-    width:270px;
- }
- .Website_subcontent{
-  color:#e0e0e0;
- font-size: 19px;
- font-weight: 500;
- margin-bottom: 2px;
- letter-spacing:1px;
- margin-top:30px;
-}
-.content_heading{
-       font-size: 22px;
- font-weight: 600;
-}
-.li-no{
-      color:#867979;
- font-size: 19px;
-}
-.get_info{
- color:white;
- font-size: 19px;
- font-weight: 500;
- margin-top: 30px;
- letter-spacing:1px;
-}
-.get_info_heading{
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  color:#e0e0e0;
-}
-.web_line2{
-    height:2px;
-    background:black;
-    margin:0;
-    border:none;
-    width:220px;
-}
-.web_btn{
-    transition: all 0.3s linear;
- -webkit-transition: all 0.3s linear;
- -moz-transition: all 0.3s linear;
- -o-transition: all 0.3s linear;
- -ms-transition: all 0.3s linear;
- font-size: 16px;
- padding: 20px 80px 20px 80px;
- display: inline-block;
- margin-bottom: 0;
- text-decoration: none;
- text-transform: uppercase;
- white-space: nowrap;
- vertical-align: middle;
- font-weight: 700;
- text-align: center;
- background: #43baff;
- cursor: pointer;
- border: 1px solid transparent;
- color: #fff;
- outline: none;
- margin-top:70px;
-}
-.web_btn button:hover {
- background: #7141b1;
-}
-.web_btn:hover, .web_btn:focus {
- background: #7141b1;
- color: #fff;
-  margin-top:20px;
+.svc-intro {
+    position: relative;
+    background: #080808;
+    padding: 50px 8%;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
- .web_card{
-     padding:20px;
-     background:#f5f2f9;
-     border-radius:5px;
- }
-  .card_headding{
-      color:#e0e0e0;
- font-size: 24px;
- font-weight: 600;
- letter-spacing:1px;
- margin-bottom:10px;
-  }
-  .card_titel{
-        color:#e0e0e0;
- font-size: 16px;
- font-weight: 500;
- content:justify;
- 
-  }
+.svc-intro-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
 
- @media(max-width:768px){
-     .about_us {
- font-size: 30px;
- font-weight: 600;
- color: #43baff;
- text-align: center;
- margin-top: 20px;
- margin-bottom: 20px;
- }
-   .web_top {
- margin-top: 30px;
+.svc-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1CB89E;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    background: rgba(28, 184, 158, 0.1);
+    padding: 6px 15px;
+    border-radius: 4px;
 }
- .Website_heading {
- font-size: 20px;
- font-weight: 700;
- margin-top: 0px;
- margin-bottom: 5px;
- color: #e0e0e0;
+
+.svc-intro-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    letter-spacing: -1.5px;
 }
-.web_line {
- height: 2px;
- background: black;
- margin: 0;
- border: none;
- width: 110px;
+
+.svc-intro-body {
+    font-size: 18px;
+    color: #aaaaaa;
+    line-height: 1.8;
+    font-weight: 400;
+    margin-bottom: 40px;
 }
-.Website_sub {
- color: #e0e0e0;
- font-size: 15px;
- font-weight: 500;
- margin-bottom: 2px;
- letter-spacing: 1px;
- margin-top: 15px;
+
+/* Detailed content blocks */
+.svc-details {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
 }
-.Website_heading1 {
- font-size: 20px;
- font-weight: 700;
- margin-top: 0px;
- margin-bottom: 5px;
- color: #e0e0e0;
+
+.svc-feature {
+    padding-left: 25px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
-.web_line1 {
- height: 2px;
- background: black;
- margin: 0;
- border: none;
- width: 200px;
+
+.svc-feature:hover {
+    border-left-color: #1CB89E;
+    transform: translateX(10px);
 }
-.content_heading {
- font-size: 18px;
- font-weight: 600;
+
+.svc-feature h4 {
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
 }
-.Website_subcontent {
- color: #e0e0e0;
- font-size: 14px;
- font-weight: 500;
- margin-bottom: 2px;
- letter-spacing: 1px;
- margin-top: 20px;
+
+.svc-feature .svc-intro-body {
+    font-size: 16px;
+    margin-bottom: 0;
 }
- }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .svc-intro {
+        padding: 80px 6%;
+    }
+}
+
+@media (max-width: 768px) {
+    .svc-intro {
+        padding: 60px 20px;
+        text-align: left;
+    }
+
+    .svc-feature:hover {
+        transform: none;
+    }
+}

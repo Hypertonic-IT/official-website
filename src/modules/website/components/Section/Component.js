@@ -41,9 +41,9 @@ const HeroSection = () => {
           {/* LEFT: text */}
           <motion.div
             className="hero-left"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0, x: -60, filter: "blur(10px)" }}
+            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           >
             <h1 className="hero-title">
               Building Modern<br />
@@ -68,9 +68,9 @@ const HeroSection = () => {
           {/* RIGHT: floating tech mockup */}
           <motion.div
             className="hero-right"
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+            initial={{ opacity: 0, x: 60, scale: 0.95, filter: "blur(10px)" }}
+            animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           >
             <div className="hq-ui-composition">
               {/* Abstract Glass Frames */}
@@ -159,9 +159,9 @@ const HeroSection = () => {
             <span><i className="ri-code-s-slash-line"></i> Python</span>
           </div>
 
-          <div 
-            className="hero-scroll" 
-            style={{ cursor: 'pointer' }} 
+          <div
+            className="hero-scroll"
+            style={{ cursor: 'pointer' }}
             onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
           >
             <p>Scroll to Explore</p>

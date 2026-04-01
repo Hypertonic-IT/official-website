@@ -1,105 +1,85 @@
-body {
-    margin: 0;
-    padding: 0;
-}
+/* =============================================
+   TERMS & CONDITIONS / PRIVACY POLICY COMMON STYLES
+   (Reconstructed based on JSX class names)
+   ============================================= */
 
 .background_img {
-    background-image: url("img/../../../../../../public/img/earth.jpg");
-    height: auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    padding: 100px 0;
+    text-align: center;
     margin-top: 76px;
-    padding: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .term_condition {
-    font-size: 40px;
-    font-weight: 600;
-    color: #43baff;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 1px;
 }
 
 .top_privacy {
-    margin-top: 40px;
-}
-
-.privacy_topline {
-    font-size: 19px;
-    font-weight: 500;
-    margin-top: 15px;
-}
-
-.privacy_topline1 {
-    font-size: 17px;
-    font-weight: 500;
-    margin-top: 10px;
+    padding: 80px 0;
 }
 
 .privacy_hedaing {
-    font-size: 24px;
-    font-weight: 600;
-    margin-top: 15px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
 .privacy_hedaing1 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
-    margin-top: 15px;
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
 .hr_privacy_line {
-    height: 1px;
-    background: #43baff;
-    margin: 5px 0px 15px 0px;
-    width: 50px;
+    width: 100px;
+    height: 2px;
+    background: #1CB89E;
+    border: none;
+    margin-bottom: 25px;
+    opacity: 1;
 }
 
-.ri-checkbox-blank-circle-fill {
-    font-size: 10px !important;
-    margin: 0;
+.privacy_topline {
+    font-size: 16px;
+    color: #999;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.privacy_topline1 {
+    font-size: 15px;
+    color: #888;
+    line-height: 1.7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.privacy_topline1 i {
+    font-size: 8px;
+    color: #1CB89E;
 }
 
 @media (max-width: 768px) {
-    .privacy_topline {
-        font-size: 19px;
-        font-weight: 500;
-        margin-top: 0px;
-    }
-
-    .privacy_topline {
-        font-size: 16px;
-        font-weight: 500;
-        margin-top: 0px;
-    }
-
-    .privacy_hedaing1 {
-        font-size: 17px;
-        font-weight: 600;
-        margin-top: 15px;
-    }
-
-    .privacy_hedaing {
-        font-size: 20px;
-        font-weight: 600;
-        margin-top: 15px;
-    }
-
-    .privacy_topline1 {
-        font-size: 15px;
-        font-weight: 500;
-        margin-top: 10px;
-    }
-
     .term_condition {
-        font-size: 30px;
-        font-weight: 600;
-        color: #43baff;
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        font-size: 32px;
+    }
+
+    .background_img {
+        padding: 70px 0;
+    }
+
+    .top_privacy {
+        padding: 40px 15px;
     }
 }

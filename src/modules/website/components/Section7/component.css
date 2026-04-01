@@ -5,7 +5,7 @@ p {
 
 .dark-theme-section {
     background-color: transparent;
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .what_we_offer {
@@ -22,28 +22,23 @@ p {
 }
 
 .about_title_heading {
-    font-size: 46px;
+    font-size: clamp(32px, 4.5vw, 48px);
     font-weight: 800;
     color: #ffffff;
-    letter-spacing: 1px;
-    background: linear-gradient(135deg, #ffffff 0%, #a450ff 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 25px;
+    line-height: 1.1;
 }
 
 .divider-line {
-    height: 4px;
+    height: 1px;
     width: 60px;
-    background: #43baff;
-    border-radius: 2px;
-    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 35px;
 }
 
 .about_titel {
-    color: #a9a9b3;
+    color: #888;
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 25px;
@@ -52,8 +47,9 @@ p {
 }
 
 .highlight-text {
-    color: #43baff;
+    color: #ffffff;
     font-size: 18px;
+    opacity: 0.8;
 }
 
 .about_titel1 {

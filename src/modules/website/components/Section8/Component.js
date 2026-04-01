@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './component.css'; // Import CSS file for styling
-import '../Section1/component.css'; // Import Section1 CSS to style the about-ui-composition
+import './component.css';
+import '../Section1/component.css'; // Using the polished classes from Section1
 
 const CarouselSection = () => {
   const [displayText, setDisplayText] = React.useState('');
   const [serviceIndex, setServiceIndex] = React.useState(0);
   const [isDeleting, setIsDeleting] = React.useState(false);
-  
+
   const services = [
     "Web Development",
     "App Development",
@@ -20,7 +20,7 @@ const CarouselSection = () => {
   useEffect(() => {
     const typingSpeed = isDeleting ? 50 : 100;
     const currentService = services[serviceIndex];
-    
+
     const timer = setTimeout(() => {
       if (!isDeleting) {
         setDisplayText(currentService.substring(0, displayText.length + 1));
@@ -37,153 +37,111 @@ const CarouselSection = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, serviceIndex]);
-
-  useEffect(() => {
-    const counters = document.querySelectorAll(".counter");
-    counters.forEach((counter) => {
-      counter.innerText = "0";
-
-      const updateCounter = () => {
-        const target = Number(counter.getAttribute("data-target"));
-        const c = Number(counter.innerText);
-        const increment = target / 500;
-
-        if (c < target) {
-          counter.innerText = `${Math.ceil(c + increment)}`;
-          setTimeout(updateCounter, 1);
-        } else {
-          counter.innerText = target;
-        }
-      };
-
-      updateCounter();
-    });
-  }, []);
+  }, [displayText, isDeleting, serviceIndex, services]);
 
   return (
-
     <div className="container-fluid dark-theme-carousel">
       <div className="row">
-        <div className="col-sm-1"></div>
-        <div className="col-sm-10 background-clr p-4 rounded-4 shadow-lg slider-box glassy-card">
-          <div className="row">
+        <div className="col-lg-1"></div>
+        <div className="col-lg-10 background-clr glassy-card">
+          <div className="row mb-5">
             <div className="col-sm-12">
-              <h5 className="crousel_text_headung1">What We Actually Do</h5>
-              <hr className="heading_line1"></hr>
+              <p className="section-label" style={{ color: '#888', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '11px', marginBottom: '10px' }}>Capabilities</p>
+              <h2 className="crousel_text_headung1">What We Actually Do</h2>
+              <div className="heading_line1" style={{ height: '1px', background: 'rgba(255,255,255,0.2)', width: '60px', marginTop: '15px' }}></div>
             </div>
           </div>
-          <div className="row top-rw align-items-center">
+
+          <div className="row top-rw align-items-center" style={{ gap: '40px 0' }}>
+            {/* LEFT: Composition with Typing Animation */}
             <div className="col-lg-6">
-              <div className="about-ui-composition" data-cursor-text="Services">
-                {/* Abstract Glass Frames */}
+              <div className="about-ui-composition" data-cursor-text="Building">
                 <div className="about-frame about-frame-1"></div>
                 <div className="about-frame about-frame-2"></div>
 
-                {/* Main Card: Services */}
-                <div className="about-card abt-main-card" data-cursor-text="Build">
-                  <div className="abt-card-header">
-                    <div className="abt-dots"><span></span><span></span><span></span></div>
-                    <div className="abt-title">Services.js</div>
+                {/* Main Card with Animated Typing */}
+                <div className="about-card about-code-card">
+                  <div className="about-card-header">
+                    <div className="about-dots"><span></span><span></span><span></span></div>
+                    <div className="about-title">Services.js</div>
                   </div>
-                  <div className="abt-code-lines">
-                    <p className="abt-code-line"><span className="abt-keyword" style={{ color: '#569cd6' }}>function</span> execute() {"{"}</p>
-                    <p className="abt-code-line pl-3">
-                      <span className="abt-keyword" style={{ color: '#c586c0' }}>return</span> <span className="abt-string" style={{ color: '#ce9178' }}>"{displayText}"</span>
-                      <span className="abt-cursor" style={{ color: '#569cd6', fontWeight: 'bold' }}>|</span>
+                  <div className="about-code-lines">
+                    <p className="about-code-line"><span className="about-keyword">function</span> buildExperience() {"{"}</p>
+                    <p className="about-code-line pl-3">
+                      <span className="about-keyword">return</span> "{displayText}"
+                      <span className="hq-cursor">|</span>
                     </p>
-                    <p className="abt-code-line">{"}"}</p>
+                    <p className="about-code-line">{"}"};</p>
                   </div>
                 </div>
 
-                {/* Floating Graph Card */}
-                <div className="about-card abt-graph-card" data-cursor-text="Results">
-                  <div className="abt-graph-header">
-                    <div className="abt-graph-title">Growth Model</div>
-                    <i className="ri-line-chart-line" style={{ color: '#4ade80' }}></i>
+                {/* Graph Card */}
+                <div className="about-card about-graph-card">
+                  <div className="about-graph-header">
+                    <div className="about-graph-title" style={{ fontSize: '11px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px' }}>Engagement</div>
+                    <i className="ri-bar-chart-2-line" style={{ color: '#fff' }}></i>
                   </div>
-                  <div className="abt-graph-bars">
-                    <div className="abt-bar-col"><div className="abt-bar-fill" style={{ height: '30%' }}></div></div>
-                    <div className="abt-bar-col"><div className="abt-bar-fill" style={{ height: '50%' }}></div></div>
-                    <div className="abt-bar-col"><div className="abt-bar-fill" style={{ height: '75%' }}></div></div>
-                    <div className="abt-bar-col"><div className="abt-bar-fill active" style={{ height: '100%' }}></div></div>
+                  <div className="about-graph-line" style={{ display: 'flex', alignItems: 'flex-end', gap: '8px', height: '80px', marginTop: '15px' }}>
+                    <div style={{ height: '30%', width: '15%', background: 'rgba(255,255,255,0.1)', borderRadius: '2px' }}></div>
+                    <div style={{ height: '50%', width: '15%', background: 'rgba(255,255,255,0.2)', borderRadius: '2px' }}></div>
+                    <div style={{ height: '80%', width: '15%', background: 'rgba(255,255,255,0.3)', borderRadius: '2px' }}></div>
+                    <div style={{ height: '100%', width: '15%', background: '#fff', borderRadius: '2px' }}></div>
+                    <div style={{ height: '60%', width: '15%', background: 'rgba(255,255,255,0.2)', borderRadius: '2px' }}></div>
                   </div>
                 </div>
 
-                {/* Floating Elements */}
-                <div className="abt-float abt-float-1">
-                  <i className="ri-lightbulb-flash-line"></i>
-                  <div className="abt-bar-group">
-                    <div className="abt-line abt-line-1"></div>
-                    <div className="abt-line abt-line-2"></div>
+                <div className="about-float about-float-1">
+                  <i className="ri-code-box-line"></i>
+                  <div className="about-bar-group">
+                    <div className="about-bar about-bar-1"></div>
+                    <div className="about-bar about-bar-2"></div>
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* RIGHT: Carousel Content */}
             <div className="col-lg-6">
               <div className="siderrr">
-
                 <div id="demo" className="carousel slide" data-bs-ride="carousel">
-                  {/* Indicators */}
-                  <ul className="carousel-indicators">
-                    <li data-bs-target="#demo" data-bs-slide-to="0" className="active"></li>
-                    <li data-bs-target="#demo" data-bs-slide-to="1"></li>
-                    <li data-bs-target="#demo" data-bs-slide-to="2"></li>
-                    <li data-bs-target="#demo" data-bs-slide-to="3"></li>
-                    <li data-bs-target="#demo" data-bs-slide-to="4"></li>
-                    <li data-bs-target="#demo" data-bs-slide-to="5"></li>
-                  </ul>
-
-                  {/* The slideshow */}
                   <div className="carousel-inner">
                     <div className="carousel-item active">
-                      <p className="about_Website">Website Development Services</p>
-                      <p className="about_Website_sub">At Hypertonic It Solutions, we recognize that a well-designed, functional website is essential for establishing a strong online presence. As digital platforms become increasingly vital, having a professionally crafted website is now a necessity for businesses of all sizes and industries.</p>
-                      <Link to="/web"><button className="btn btn_aboutRead_more">Read More</button></Link>
+                      <h3 className="about_Website">Website Development</h3>
+                      <p className="about_Website_sub">A well-designed, functional website is essential for establishing a strong online presence. We craft professional websites tailored to your business needs.</p>
+                      <Link to="/website" className="btn_aboutRead_more magnetic">Explore More →</Link>
                     </div>
                     <div className="carousel-item">
-                      <p className="about_Website">App Development Services</p>
-                      <p className="about_Website_sub">At Hypertonic It Solutions, we craft high-quality, innovative mobile apps for Android and iOS. Our experienced team is dedicated to bringing your app ideas to life, delivering user-friendly results that align with your business goals and exceed expectations.</p>
-                      <Link to="/app"><button className="btn btn_aboutRead_more">Read More</button></Link>
+                      <h3 className="about_Website">App Development</h3>
+                      <p className="about_Website_sub">We craft high-quality, innovative mobile apps for Android and iOS, bringing your product ideas to life with user-friendly interfaces.</p>
+                      <Link to="/app" className="btn_aboutRead_more magnetic">Explore More →</Link>
                     </div>
                     <div className="carousel-item">
-                      <p className="about_Website">Software Development Services</p>
-                      <p className="about_Website_sub">At Hypertonic It Solutions, we provide tailored software development solutions for businesses across industries. Our skilled developers deliver high-quality, custom software that empowers clients to streamline operations, enhance productivity, and achieve their business goals.</p>
-                      <Link to="/software"><button className="btn btn_aboutRead_more">Read More</button></Link>
+                      <h3 className="about_Website">Software Solutions</h3>
+                      <p className="about_Website_sub">Tailored software development solutions to streamline operations, enhance productivity, and achieve specific business milestones.</p>
+                      <Link to="/software" className="btn_aboutRead_more magnetic">Explore More →</Link>
                     </div>
                     <div className="carousel-item">
-                      <p className="about_Website">Social Media Management</p>
-                      <p className="about_Website_sub">Effective social media management is essential for maintaining a strong online presence. It ensures consistent engagement with your audience, helps build a loyal community, and keeps your brand relevant in a rapidly evolving digital landscape. It also allows you to adapt quickly to trends and audience needs.</p>
-                      <Link to="/smm"><button className="btn btn_aboutRead_more">Read More</button></Link>
+                      <h3 className="about_Website">Social Media Management</h3>
+                      <p className="about_Website_sub">Effective management ensures consistent engagement with your audience, helps build a loyal community, and keeps your brand relevant.</p>
+                      <Link to="/smm" className="btn_aboutRead_more magnetic">Explore More →</Link>
                     </div>
-                    <div className="carousel-item">
-                      <p className="about_Website">Social Media Social Media</p>
-                      <p className="about_Website_sub">Social media marketing is an incredibly powerful tool for expanding your reach and attracting new audiences. By leveraging targeted ads and well-planned strategic campaigns, you can generate high-quality leads, enhance brand visibility, and achieve a measurable return on investment (ROI) that drives business success.</p>
-                      <Link to="/social"><button className="btn btn_aboutRead_more">Read More</button></Link>
-                    </div>
-                    <div className="carousel-item">
-                      <p className="about_Website">Advertising and Promotions</p>
-                      <p className="about_Website_sub">Advertising and promotions are essential for increasing brand visibility and attracting potential customers. They enable your business to stand out in a crowded market, boost brand recognition, and effectively drive traffic to your website or physical location, ultimately supporting long-term growth and success.</p>
-                      <Link to="/addvertise"><button className="btn btn_aboutRead_more">Read More</button></Link>
-                    </div>
-
                   </div>
 
-                  {/* Left and right controls */}
-                  <a className="carousel-control-prev custom-control" href="#demo" role="button" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon custom-icon" aria-hidden="true"></span>
-                  </a>
-                  <a className="carousel-control-next custom-control" href="#demo" role="button" data-bs-slide="next">
-                    <span className="carousel-control-next-icon custom-icon" aria-hidden="true"></span>
-                  </a>
+                  <div className="carousel-controls mt-5" style={{ display: 'flex', gap: '15px' }}>
+                    <button className="carousel-control-btn" data-bs-target="#demo" data-bs-slide="prev">
+                      <i className="ri-arrow-left-line"></i>
+                    </button>
+                    <button className="carousel-control-btn" data-bs-target="#demo" data-bs-slide="next">
+                      <i className="ri-arrow-right-line"></i>
+                    </button>
+                  </div>
                 </div>
-
               </div>
             </div>
+
           </div>
         </div>
-        <div className="col-sm-1"></div>
+        <div className="col-lg-1"></div>
       </div>
     </div>
   );

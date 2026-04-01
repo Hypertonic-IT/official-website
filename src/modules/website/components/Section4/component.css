@@ -1,4 +1,6 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 /* ── Filter tabs ── */
 .portfolio.section-portfolio {
@@ -17,11 +19,11 @@
 }
 
 .portfolio-cats li {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   color: #aaa;
   padding: 8px 20px;
   border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   cursor: pointer;
   font-size: 13px;
   font-weight: 500;
@@ -42,8 +44,17 @@
   gap: 20px;
 }
 
-@media (max-width: 992px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 600px)  { .portfolio-grid { grid-template-columns: 1fr; } }
+@media (max-width: 992px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ── Cards ── */
 .portfolio-item-new {
@@ -57,14 +68,14 @@
   border-radius: 14px;
   overflow: hidden;
   height: 220px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .portfolio_card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
-  border-color: rgba(255,255,255,0.22);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 .portfolio_card img {
@@ -82,7 +93,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,15 +101,17 @@
   transition: opacity 0.35s ease;
 }
 
-.portfolio_card:hover .overlay { opacity: 1; }
+.portfolio_card:hover .overlay {
+  opacity: 1;
+}
 
 .overlay .text {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.5px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 10px 22px;
   border-radius: 100px;
   backdrop-filter: blur(10px);
@@ -108,7 +121,7 @@
 .pf-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(6px);
   z-index: 9999;
   display: flex;
@@ -118,12 +131,20 @@
   animation: fadeIn 0.25s ease;
 }
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 
 /* ── Modal Box ── */
 .pf-modal {
   background: #111;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   width: 100%;
   max-width: 780px;
@@ -133,19 +154,33 @@
   flex-direction: row;
   position: relative;
   animation: slideUp 0.3s ease;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
 }
 
-@keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
 
-@media (max-width: 640px) { .pf-modal { flex-direction: column; } }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .pf-modal {
+    flex-direction: column;
+  }
+}
 
 /* Close button */
 .pf-modal-close {
   position: absolute;
   top: 14px;
   right: 16px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   border: none;
   border-radius: 50%;
   width: 34px;
@@ -159,7 +194,10 @@
   justify-content: center;
   transition: background 0.2s;
 }
-.pf-modal-close:hover { background: rgba(255,255,255,0.2); }
+
+.pf-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 
 /* Left thumb */
 .pf-modal-thumb {
@@ -171,7 +209,11 @@
 }
 
 @media (max-width: 640px) {
-  .pf-modal-thumb { width: 100%; height: 160px; border-radius: 20px 20px 0 0; }
+  .pf-modal-thumb {
+    width: 100%;
+    height: 160px;
+    border-radius: 20px 20px 0 0;
+  }
 }
 
 .pf-modal-thumb img {
@@ -183,7 +225,7 @@
 .pf-modal-thumb-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
   display: flex;
   align-items: flex-end;
   padding: 18px;
@@ -216,7 +258,11 @@
 }
 
 /* Form fields */
-.pf-form { display: flex; flex-direction: column; gap: 16px; }
+.pf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
 .pf-field {
   display: flex;
@@ -233,8 +279,8 @@
 }
 
 .pf-input {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   color: #fff;
   padding: 12px 16px;
@@ -247,12 +293,17 @@
 }
 
 .pf-input:focus {
-  border-color: rgba(255,255,255,0.4);
-  background: rgba(255,255,255,0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.pf-input.error { border-color: #ff5f5f; }
-.pf-input::placeholder { color: rgba(255,255,255,0.25); }
+.pf-input.error {
+  border-color: #ff5f5f;
+}
+
+.pf-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
 
 .pf-error {
   font-size: 12px;
@@ -274,9 +325,9 @@
 }
 
 .pf-btn:hover {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255,255,255,0.1);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
 }
 
 /* Success state */
@@ -294,7 +345,7 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #27c93f, #4ade80);
+  background: linear-gradient(135deg, #bbb, #4ade80);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -303,8 +354,18 @@
   box-shadow: 0 0 30px rgba(74, 222, 128, 0.4);
 }
 
-.pf-success h3 { color: #fff; font-size: 22px; margin: 0; }
-.pf-success p  { color: #888; font-size: 14px; line-height: 1.6; max-width: 280px; }
+.pf-success h3 {
+  color: #fff;
+  font-size: 22px;
+  margin: 0;
+}
+
+.pf-success p {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 280px;
+}
 
 
 :root {

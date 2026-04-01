@@ -21,8 +21,8 @@ body {
   margin: 0;
   padding: 0;
   letter-spacing: 0.2px;
-  background-color: #080808 !important;
-  color: #e8e8e8 !important;
+  background-color: #080808;
+  color: #e8e8e8;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -96,7 +96,7 @@ a {
   align-items: center;
   gap: 8px;
   background: #ffffff;
-  color: #000000;
+  color: #f0f0f0;
   border: none;
   border-radius: 100px;
   padding: 14px 30px;
@@ -137,4 +137,104 @@ a {
 .page-hero-section {
   position: relative !important;
   z-index: 10 !important;
+}
+
+/* Global Mobile Fix for Padding - Ensuring NO content touches left and right edges */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container,
+  .container-fluid {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Additional guarantees for hero, sections, content */
+  .hero-left,
+  .hero-right,
+  .hero-main {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .padd__inng,
+  .about_top,
+  .sv2-header,
+  .pv2-header,
+  .form_top,
+  .side_padd,
+  .col-md-5,
+  .col-lg-10 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* Prevent titles from overflowing */
+  .hero-title,
+  .about_heading,
+  .we_comme,
+  .sv2-title,
+  .pv2-title,
+  .section-title,
+  .redy_get,
+  .contact_titel {
+    word-break: normal;
+    word-wrap: break-word;
+    line-height: 1.25 !important;
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: 36px !important;
+  }
+
+  .about_heading,
+  .we_comme,
+  .sv2-title,
+  .pv2-title,
+  .section-title,
+  .redy_get {
+    font-size: 28px !important;
+  }
+
+  .contact_titel {
+    font-size: 16px !important;
+  }
+
+  /* Avoid overflowing images / SVGs */
+  .about-ui-composition,
+  .hq-ui-composition {
+    max-width: 100%;
+    transform: scale(0.7) !important;
+    margin-left: -15%;
+  }
+
+  /* Make sure video does not overflow */
+  .about_immg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-ctas a {
+    width: 80%;
+    justify-content: center;
+  }
 }

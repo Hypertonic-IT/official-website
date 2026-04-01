@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Nav from '../../components/Nav/Nav';
 import Footer from '../../components/Footer/Footer';
 import Section17 from '../../components/Section17/Component';
@@ -15,9 +14,8 @@ const Software = () => {
       <Section18 />
       <Section19 />
       <Section20 />
-
       <Footer />
-      </>
+    </>
   );
 }
 

@@ -13,7 +13,7 @@
 }
 
 .logo_navbar {
-  height: 45px;
+  height: 35px;
   mix-blend-mode: screen;
   object-fit: contain;
 }
@@ -24,7 +24,7 @@
   color: #999 !important;
   text-transform: capitalize;
   font-family: 'Inter', sans-serif;
-  padding: 8px 14px !important;
+  padding: 8px 8px !important;
   transition: color 0.25s ease !important;
   letter-spacing: 0.3px;
 }
@@ -36,7 +36,7 @@
 /* Get Quote button in navbar */
 .navbar-cta {
   background: #ffffff;
-  color: #000000 !important;
+  color: #1CB89E !important;
   border-radius: 100px;
   padding: 8px 22px !important;
   font-weight: 600 !important;

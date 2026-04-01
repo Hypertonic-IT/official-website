@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Nav from '../../components/Nav/Nav';
 import Footer from '../../components/Footer/Footer';
 import Section9 from '../../components/Section9/Component';
@@ -15,9 +14,8 @@ const Web = () => {
       <Section10 />
       <Section11 />
       <Section12 />
-
       <Footer />
-      </>
+    </>
   );
 }
 

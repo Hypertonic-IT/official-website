@@ -9,7 +9,15 @@
 }
 
 /* Hide default cursor globally */
-html, body, a, button, [role="button"], .hero-btn-primary, .hero-btn-outline, .btn-primary-dark, .btn-outline-dark {
+html,
+body,
+a,
+button,
+[role="button"],
+.hero-btn-primary,
+.hero-btn-outline,
+.btn-primary-dark,
+.btn-outline-dark {
   cursor: none !important;
 }
 
@@ -36,10 +44,10 @@ html, body, a, button, [role="button"], .hero-btn-primary, .hero-btn-outline, .b
   z-index: 100000;
   pointer-events: none;
   mix-blend-mode: difference;
-  transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1), 
-              height 0.4s cubic-bezier(0.19, 1, 0.22, 1), 
-              background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), 
-              border-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    height 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    border-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 /* Hover over clickable elements */
@@ -57,6 +65,7 @@ html, body, a, button, [role="button"], .hero-btn-primary, .hero-btn-outline, .b
   background-color: #fff;
   border: none;
   mix-blend-mode: normal;
+
 }
 
 /* Hover over Drag elements */
@@ -86,8 +95,13 @@ html, body, a, button, [role="button"], .hero-btn-primary, .hero-btn-outline, .b
 }
 
 /* Theme Adaptation helper classes if needed */
-.light-theme .cursor-dot { background-color: #000; }
-.light-theme .cursor-outline { border-color: rgba(0,0,0,0.45); }
+.light-theme .cursor-dot {
+  background-color: #000;
+}
+
+.light-theme .cursor-outline {
+  border-color: rgba(0, 0, 0, 0.45);
+}
 
 /* Magnetic elements transition */
 .magnetic {
@@ -96,6 +110,8 @@ html, body, a, button, [role="button"], .hero-btn-primary, .hero-btn-outline, .b
 }
 
 /* For images to have "View" cursor */
-img, .hq-card, .portfolio-card {
+img,
+.hq-card,
+.portfolio-card {
   pointer-events: auto;
 }

@@ -1,20 +1,19 @@
 import React from 'react';
 import './component.css';
-import '../Section/component.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const revealFromLeft = {
-  hidden: { opacity: 0, x: -40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } }
+  hidden: { opacity: 0, x: -50, filter: "blur(8px)" },
+  visible: { opacity: 1, x: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }
 };
 const revealFromRight = {
-  hidden: { opacity: 0, x: 40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut", delay: 0.15 } }
+  hidden: { opacity: 0, x: 50, filter: "blur(8px)" },
+  visible: { opacity: 1, x: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 } }
 };
 const revealUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  hidden: { opacity: 0, y: 40, filter: "blur(8px)", scale: 0.98 },
+  visible: { opacity: 1, y: 0, filter: "blur(0px)", scale: 1, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
 };
 
 const AppDevelopment = () => {
@@ -88,39 +87,39 @@ const AppDevelopment = () => {
               viewport={{ once: true, amount: 0.3 }}
               variants={revealFromRight}
             >
-              <div className="hq-ui-composition" data-cursor-text="Hypertonic">
+              <div className="about-ui-composition" data-cursor-text="Hypertonic">
                 {/* Abstract Glass Frames */}
-                <div className="hq-frame hq-frame-1"></div>
-                <div className="hq-frame hq-frame-2"></div>
+                <div className="about-frame about-frame-1"></div>
+                <div className="about-frame about-frame-2"></div>
 
                 {/* Code Snippet Card */}
-                <div className="hq-card hq-code-card">
-                  <div className="hq-card-header">
-                    <div className="hq-dots"><span></span><span></span><span></span></div>
-                    <div className="hq-title">About.js</div>
+                <div className="about-card about-code-card">
+                  <div className="about-card-header">
+                    <div className="about-dots"><span></span><span></span><span></span></div>
+                    <div className="about-title">About.js</div>
                   </div>
-                  <div className="hq-code-lines">
-                    <p className="hq-code-line"><span className="hq-keyword">export const</span> OurMission = () =&gt; {"{"}</p>
-                    <p className="hq-code-line pl-3"><span className="hq-keyword">return</span> (</p>
-                    <p className="hq-code-line pl-4">&lt;Innovation</p>
-                    <p className="hq-code-line pl-5">quality=&#123;100&#125;</p>
-                    <p className="hq-code-line pl-5">passion="true"</p>
-                    <p className="hq-code-line pl-4">&gt;</p>
-                    <p className="hq-code-line pl-5">&lt;Solutions scales=&#123;true&#125; /&gt;</p>
-                    <p className="hq-code-line pl-4">&lt;/Innovation&gt;</p>
-                    <p className="hq-code-line pl-3">);</p>
-                    <p className="hq-code-line">{"}"}</p>
+                  <div className="about-code-lines">
+                    <p className="about-code-line"><span className="about-keyword">export const</span> OurMission = () =&gt; {"{"}</p>
+                    <p className="about-code-line pl-3"><span className="about-keyword">return</span> (</p>
+                    <p className="about-code-line pl-4">&lt;Innovation</p>
+                    <p className="about-code-line pl-5">quality=&#123;100&#125;</p>
+                    <p className="about-code-line pl-5">passion="true"</p>
+                    <p className="about-code-line pl-4">&gt;</p>
+                    <p className="about-code-line pl-5">&lt;Solutions scales=&#123;true&#125; /&gt;</p>
+                    <p className="about-code-line pl-4">&lt;/Innovation&gt;</p>
+                    <p className="about-code-line pl-3">);</p>
+                    <p className="about-code-line">{"}"}</p>
                     <span className="hq-cursor">_</span>
                   </div>
                 </div>
 
                 {/* Data Graph Card */}
-                <div className="hq-card hq-graph-card">
-                  <div className="hq-graph-header">
-                    <div className="hq-graph-title">Client Growth</div>
+                <div className="about-card about-graph-card">
+                  <div className="about-graph-header">
+                    <div className="about-graph-title">Client Growth</div>
                     <i className="ri-add-line"></i>
                   </div>
-                  <svg className="hq-graph-line" viewBox="0 0 100 50">
+                  <svg className="about-graph-line" viewBox="0 0 100 50">
                     <path d="M0 45 Q 15 38, 25 30 T 45 20 T 65 22 T 85 12 T 100 4" fill="none" stroke="url(#about-gradient)" strokeWidth="1.5" strokeDasharray="1000" strokeDashoffset="0" />
                     <circle cx="25" cy="30" r="1.5" fill="#fff" />
                     <circle cx="45" cy="20" r="1.5" fill="#fff" />
@@ -133,30 +132,31 @@ const AppDevelopment = () => {
                       </linearGradient>
                     </defs>
                   </svg>
-                  <div className="hq-graph-labels">
+                  <div className="about-graph-labels">
                     <span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span>
                   </div>
                 </div>
 
                 {/* Floating Element 1 */}
-                <div className="hq-float hq-float-1">
+                <div className="about-float about-float-1">
                   <i className="ri-team-line"></i>
-                  <div className="hq-bar-group">
-                    <div className="hq-bar hq-bar-1"></div>
-                    <div className="hq-bar hq-bar-2"></div>
+                  <div className="about-bar-group">
+                    <div className="about-bar about-bar-1"></div>
+                    <div className="about-bar about-bar-2"></div>
                   </div>
                 </div>
 
                 {/* Floating Element 2 */}
-                <div className="hq-float hq-float-2">
+                <div className="about-float about-float-2">
                   <i className="ri-award-line"></i>
-                  <div className="hq-bar-group">
-                    <div className="hq-bar hq-bar-3"></div>
-                    <div className="hq-bar hq-bar-4"></div>
+                  <div className="about-bar-group">
+                    <div className="about-bar about-bar-3"></div>
+                    <div className="about-bar about-bar-4"></div>
                   </div>
                 </div>
               </div>
             </motion.div>
+
 
           </div>
         </div>

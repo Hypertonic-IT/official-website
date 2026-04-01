@@ -1,70 +1,151 @@
-body{
-    p{
-        margin:0;
-        padding:0;
+/* =============================================
+   UNIFIED SERVICE INTRO — Ultra Premium Minimalist Editorial (B&W)
+   ============================================= */
+
+.svc-intro {
+    position: relative;
+    background: transparent;
+    padding: 80px 8%;
+    overflow: hidden;
+}
+
+.svc-intro-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hide redundant badges / titles */
+.svc-label {
+    display: none;
+}
+
+.svc-intro>.svc-intro-inner>.svc-intro-title:first-of-type,
+.svc-intro>.svc-intro-inner>h2.svc-intro-title {
+    display: none;
+}
+
+/* Intro Body text at top */
+.svc-intro>.svc-intro-inner>.svc-intro-body,
+.svc-intro>.svc-intro-inner>p.svc-intro-body {
+    font-size: 22px;
+    color: #a0a0a0;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 80px;
+    max-width: 900px;
+}
+
+/* The Subheadings inside features */
+.svc-details .svc-intro-title {
+    display: block;
+    width: 100%;
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    letter-spacing: -1.5px;
+    border-bottom: 1px solid #333333;
+    padding-bottom: 30px;
+}
+
+/* Editorial List Layout instead of Cards */
+.svc-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+/* High-End B&W Editorial Row */
+.svc-feature {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    padding: 50px 0;
+    border-bottom: 1px solid #1a1a1a;
+    background: transparent;
+    transition: all 0.5s ease;
+    align-items: start;
+    position: relative;
+}
+
+/* A sleek hover effect */
+.svc-feature::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: #ffffff;
+    transform: scaleY(0);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: center;
+}
+
+.svc-feature:hover {
+    border-bottom: 1px solid #ffffff;
+}
+
+.svc-feature:hover::before {
+    transform: scaleY(0.7);
+}
+
+/* Dynamic Text Hover */
+.svc-feature h4 {
+    color: #ffffff !important;
+    font-size: 26px !important;
+    font-weight: 500 !important;
+    margin-bottom: 0 !important;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.svc-feature .svc-intro-body {
+    font-size: 18px;
+    color: #777777;
+    line-height: 1.8;
+    margin-bottom: 0;
+    font-weight: 300;
+    transition: color 0.5s ease;
+}
+
+.svc-feature:hover h4 {
+    transform: translateX(10px);
+}
+
+.svc-feature:hover .svc-intro-body {
+    color: #cccccc !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .svc-feature {
+        grid-template-columns: 250px 1fr;
+        gap: 30px;
     }
 }
-.web_line{
-   height:2px;
-   background:black !important;
-   margin:0;
-   border:none;
-   width:300px;
-}
-.web_top{
-   margin-top:70px;
-}
-.Website_heading{
- font-size: 28px;
- font-weight: 700;
- margin-top: 10px;
- margin-bottom: 5px;
- color:#e0e0e0;
 
-}
-.Website_sub{
- color:#e0e0e0;
-font-size: 22px;
-font-weight: 500;
-margin-bottom: 2px;
-letter-spacing:1px;
-margin-top:30px;
-}
+@media (max-width: 768px) {
+    .svc-intro {
+        padding: 50px 20px;
+    }
 
+    .svc-feature {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 40px 0;
+    }
 
-@media(max-width:768px){
-    .about_us {
-font-size: 30px;
-font-weight: 600;
-color: #43baff;
-text-align: center;
-margin-top: 20px;
-margin-bottom: 20px;
-}
-  .web_top {
-margin-top: 30px;
-}
-.Website_heading {
-font-size: 20px;
-font-weight: 700;
-margin-top: 0px;
-margin-bottom: 5px;
-color: #e0e0e0;
-}
-.web_line {
-height: 2px;
-background: black;
-margin: 0;
-border: none;
-width: 110px;
-}
-.Website_sub {
-color: #e0e0e0;
-font-size: 15px;
-font-weight: 500;
-margin-bottom: 2px;
-letter-spacing: 1px;
-margin-top: 15px;
-}
+    .svc-feature::before {
+        display: none;
+    }
 
+    .svc-feature:hover h4 {
+        transform: translateX(5px);
+    }
 }

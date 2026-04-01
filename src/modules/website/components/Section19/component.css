@@ -1,0 +1,96 @@
+/* =============================================
+   UNIFIED SERVICE INTRO — Dark Premium
+   ============================================= */
+
+.svc-intro {
+    position: relative;
+    background: #080808;
+    padding: 50px 8%;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.svc-intro-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.svc-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1CB89E;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    background: rgba(28, 184, 158, 0.1);
+    padding: 6px 15px;
+    border-radius: 4px;
+}
+
+.svc-intro-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    letter-spacing: -1.5px;
+}
+
+.svc-intro-body {
+    font-size: 18px;
+    color: #aaaaaa;
+    line-height: 1.8;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+/* Detailed content blocks */
+.svc-details {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.svc-feature {
+    padding-left: 25px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.svc-feature:hover {
+    border-left-color: #1CB89E;
+    transform: translateX(10px);
+}
+
+.svc-feature h4 {
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+}
+
+.svc-feature .svc-intro-body {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .svc-intro {
+        padding: 80px 6%;
+    }
+}
+
+@media (max-width: 768px) {
+    .svc-intro {
+        padding: 60px 20px;
+        text-align: left;
+    }
+
+    .svc-feature:hover {
+        transform: none;
+    }
+}

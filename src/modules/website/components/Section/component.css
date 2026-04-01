@@ -32,7 +32,7 @@
   width: 130%;
   height: 320px;
   border-radius: 50% 50% 0 0;
-  background: radial-gradient(ellipse at center top, rgba(80, 80, 80, 0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center top, rgba(28, 184, 158, 0.15) 0%, transparent 70%);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   z-index: 1;
   pointer-events: none;
@@ -226,15 +226,15 @@
 }
 
 .hq-dots span:nth-child(1) {
-  background: rgba(255, 95, 86, 0.8);
+  background: #ff5f56;
 }
 
 .hq-dots span:nth-child(2) {
-  background: rgba(255, 189, 46, 0.8);
+  background: #ffbd2e;
 }
 
 .hq-dots span:nth-child(3) {
-  background: rgba(39, 201, 63, 0.8);
+  background: #27c93f;
 }
 
 .hq-title {
@@ -430,33 +430,35 @@
 
 .hero-trust-label {
   font-size: 13px;
-  color: #444;
-  letter-spacing: 0.5px;
-  margin-bottom: 18px;
+  color: #888;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  opacity: 0.6;
 }
 
 .hero-trust-logos {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
   flex-wrap: wrap;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .hero-trust-logos span {
   font-size: 15px;
-  font-weight: 600;
-  color: #555;
+  font-weight: 500;
+  color: #aaa;
   display: flex;
   align-items: center;
-  gap: 7px;
-  letter-spacing: 0.3px;
-  transition: color 0.25s;
+  gap: 8px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
 }
 
 .hero-trust-logos span:hover {
-  color: #aaa;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .hero-trust-logos span i,
@@ -568,8 +570,8 @@
   pointer-events: all;
   text-decoration: none;
   transform: translateY(-50%);
-  transition: opacity 0.25s ease;
-  opacity: 0.6;
+  transition: all 0.3s ease;
+  opacity: 0.4;
 }
 
 .h-sidebar__arm:hover {

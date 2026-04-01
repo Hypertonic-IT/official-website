@@ -33,7 +33,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-light shadow-sm bg-light fixed-top">
       <div className="container">
         <Link className="navbar-brand d-flex align-items-center" to="/">
-          <img src="img/hyperlogo.png" className="img-fluid logo_navbar" alt="Hyper Logo" />
+          <img src="img/hyperlogo.png" className="logo_navbar" alt="Hyper Logo" />
           {/* <span class="ml-3 font-weight-bold">BRAND</apan> */}
         </Link>
         <div
