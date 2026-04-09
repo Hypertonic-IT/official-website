@@ -1,7 +1,7 @@
 .hero-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 78vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@
   width: 130%;
   height: 320px;
   border-radius: 50% 50% 0 0;
-  background: radial-gradient(ellipse at center top, rgba(28, 184, 158, 0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center top, rgb(255 255 255 / 15%) 0%, transparent 62%);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   z-index: 1;
   pointer-events: none;
@@ -49,11 +49,14 @@
   gap: 40px;
 }
 
-/* LEFT: text content */
 .hero-left {
   flex: 0 0 auto;
   width: 46%;
   max-width: 560px;
+}
+
+.mobile-only-title {
+  display: none;
 }
 
 .hero-eyebrow {
@@ -515,19 +518,72 @@
 @media(max-width: 768px) {
   .hero-main {
     flex-direction: column;
-    padding: 100px 6% 40px;
+    padding: 20px 4% 45px;
     text-align: center;
     align-items: center;
+    margin-bottom: 40px;
+    gap: 0;
+  }
+
+  .hero-left,
+  .hero-right,
+  .hero-main {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-bottom {
+    padding-bottom: 10px;
+  }
+
+  .desktop-only-title {
+    display: none;
+  }
+
+  .mobile-only-title {
+    display: block;
+    order: 1;
+    margin-bottom: 20px;
+    font-size: clamp(34px, 7vw, 42px);
+    letter-spacing: 1.12px;
   }
 
   .hero-left {
     width: 100%;
     max-width: 100%;
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-right {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 1px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    order: 2;
+  }
+
+  .hero-video-element {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    display: block;
+    margin: 0 auto;
+  }
+
+  .hq-ui-wrapper {
+    transform: scale(0.65);
+    transform-origin: center top;
+    height: 280px;
+    display: flex;
+    justify-content: center;
   }
 
   .hero-ctas {
@@ -536,10 +592,18 @@
 
   .hero-subtitle {
     max-width: 100%;
+    margin-bottom: 25px;
   }
 
   .hero-trust-logos {
     gap: 22px;
+  }
+}
+
+@media(max-width: 480px) {
+  .hq-ui-wrapper {
+    transform: scale(0.55);
+    height: 240px;
   }
 }
 
@@ -580,14 +644,14 @@
 
 /* Left arm (Email) — pinned to left edge, text rotated CCW */
 .h-sidebar__arm--left {
-  left: -58px;
+  left: -82px;
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: center center;
 }
 
 /* Right arm (Phone) — pinned to right edge, text rotated CW */
 .h-sidebar__arm--right {
-  right: 18px;
+  right: -3px;
   transform: translateY(-50%) rotate(90deg);
   transform-origin: center center;
 }
@@ -634,5 +698,9 @@
 @media (max-width: 900px) {
   .h-sidebar {
     display: none;
+  }
+
+  .hero-section {
+    height: auto;
   }
 }

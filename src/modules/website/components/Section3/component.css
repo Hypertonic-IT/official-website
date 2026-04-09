@@ -2,7 +2,7 @@
 .portfolio-v2-section {
   position: relative;
   background-color: transparent;
-  padding: 80px 0 100px;
+  padding: 30px 0 30px;
   overflow: hidden;
 }
 
@@ -69,9 +69,10 @@
 
 @media (max-width: 600px) {
   .pv2-top-bar {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 20px;
+    align-items: center;
   }
 }
 
@@ -90,6 +91,7 @@
 .pv2-cards-container::-webkit-scrollbar {
   display: none;
 }
+
 .pv2-cards-container {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -97,7 +99,8 @@
 
 .pv2-slider-item {
   flex: 0 0 calc(33.333% - 16px);
-  min-width: 300px; /* Minimum width for mobile */
+  min-width: 260px;
+  /* Minimum width for mobile */
   scroll-snap-align: start;
 }
 
@@ -105,12 +108,24 @@
   .pv2-slider-item {
     flex: 0 0 calc(50% - 12px);
   }
+
+  .portfolio-v2-section {
+    padding: 14px 0 60px;
+  }
 }
 
 @media (max-width: 600px) {
   .pv2-slider-item {
     flex: 0 0 85%;
   }
+
+  .pv2-slider-control {
+    width: 38px;
+    height: 38px;
+    font-size: 10px;
+  }
+
+
 }
 
 .pv2-card {
@@ -213,7 +228,9 @@
 }
 
 
-.pv2-card:hover .pv2-overlay-btn { opacity: 1; }
+.pv2-card:hover .pv2-overlay-btn {
+  opacity: 1;
+}
 
 .pv2-overlay-btn:hover {
   background: #fff;

@@ -1,17 +1,27 @@
 import React from 'react';
+import ParticlesBackground from '../Particles/ParticlesBackground';
+import { Link } from 'react-router-dom';
 import './component.css';
-
+import '../Section6/component.css';
 const PrivacyPolicy = () => {
   return (
     <div>
-      <div className="container-fluid background_img">
-        <div className="row">
-          <div className="col-sm-12">
-            <p className="term_condition">Privacy Policy</p>
+      {/* Page Hero Header */}
+      <div className="page-hero-section">
+      <div className="page-hero-inner">
+          <div className="page-breadcrumb">
+            <Link to="/" className="breadcrumb-link">Home</Link>
+            <span className="breadcrumb-arrow">⟶</span>
+            <span className="breadcrumb-current">Privacy Policy</span>
+          </div>
+          <h1 className="page-hero-title">Privacy Policy</h1>
+          <div className="page-hero-quote">
+            <p>How we handle data and protect your privacy securely.</p>
           </div>
         </div>
       </div>
-      <div className="container top_privacy">
+
+      <div className="container-fluid background_img" style={{ display: 'none' }}>
         <div className="row">
           <div className="col-sm-12">
             <p className="privacy_topline">

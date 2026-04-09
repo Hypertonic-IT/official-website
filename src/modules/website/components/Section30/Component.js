@@ -6,7 +6,6 @@ import './component.css';
 const UIUXDesign = () => {
   return (
     <div className="page-hero-section">
-      <ParticlesBackground color="#d4d4d4" />
       <div className="page-hero-inner">
         {/* Breadcrumb */}
         <div className="page-breadcrumb">

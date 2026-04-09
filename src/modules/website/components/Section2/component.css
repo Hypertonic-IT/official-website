@@ -239,3 +239,19 @@
     border-color: rgba(255, 255, 255, 0.4);
     color: #fff;
 }
+
+
+@media(max-width:880px) {
+    .services-v2-section {
+        padding: 45px 0 60px;
+    }
+
+    .sv2-card {
+        padding: 15px;
+    }
+
+    .sv2-overlay-btn {
+        top: 50%;
+        left: 50%;
+    }
+}

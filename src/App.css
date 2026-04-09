@@ -68,9 +68,8 @@ a {
 .section-label {
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 3px;
   color: #666;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-bottom: 14px;
 }
 
@@ -139,15 +138,57 @@ a {
   z-index: 10 !important;
 }
 
+.mobile-only-element {
+  display: none !important;
+}
+
 /* Global Mobile Fix for Padding - Ensuring NO content touches left and right edges */
 @media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
+  .desktop-only-element {
+    display: none !important;
+  }
+
+  .page-hero-section {
+    position: relative !important;
+    z-index: 10 !important;
+    margin-top: 0 !important;
+  }
+
+  .mobile-only-element {
+    display: block !important;
+  }
+
+  html,
+  body,
+  #root,
+  .App,
+  .navbar,
+  .hero-section,
+  .process-v3-section {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+  }
+
+  /* Prevent any absolute element from expanding the width */
+  * {
+    /* max-width: 100%; */
+    box-sizing: border-box;
+  }
+
+  /* Ignore max-width for specific elements that NEED to be wider (like slider tracks) */
+  .slick-track,
+  .pv2-cards-container,
+  .timeline-line-filled,
+  .hero-arc,
+  .floating-frames-container {
+    max-width: none !important;
   }
 
   .container,
   .container-fluid {
-    padding-left: 20px !important;
+    padding-left: 15px !important;
     padding-right: 20px !important;
   }
 
@@ -160,8 +201,8 @@ a {
   .hero-left,
   .hero-right,
   .hero-main {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    /* padding-left: 15px !important; */
+    /* padding-right: 15px !important; */
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -175,40 +216,74 @@ a {
   .side_padd,
   .col-md-5,
   .col-lg-10 {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
   }
 
-  /* Prevent titles from overflowing */
+  /* --- Unified Typography for Mobile --- */
+  /* Main Titles / H2s */
   .hero-title,
+  .about-section-title,
   .about_heading,
   .we_comme,
   .sv2-title,
   .pv2-title,
   .section-title,
   .redy_get,
-  .contact_titel {
+  .ct-main-title,
+  .page-hero-title,
+  .svc-intro-title {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
     word-break: normal;
     word-wrap: break-word;
-    line-height: 1.25 !important;
     width: 100%;
   }
 
+  /* Make Hero Title slightly larger on mobile */
   .hero-title {
-    font-size: 36px !important;
+    font-size: 34px !important;
   }
 
-  .about_heading,
-  .we_comme,
-  .sv2-title,
-  .pv2-title,
-  .section-title,
-  .redy_get {
-    font-size: 28px !important;
+  /* Subtitles / H3s / H4s */
+  .ct-info-title,
+  .about_Website,
+  .sv2-card-title,
+  .svc-feature h4 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
   }
 
-  .contact_titel {
-    font-size: 16px !important;
+  /* Eyebrows / Labels */
+  .section-label,
+  .pv2-subtitle,
+  .sv2-subtitle,
+  .ct-eyebrow,
+  .page-breadcrumb {
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+  }
+
+  /* Standard Descriptions / Paragraphs */
+  .about-text,
+  .about_Website_sub,
+  .sv2-card-desc,
+  .pv2-card-desc,
+  .svc-intro-body,
+  .ct-info-desc {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    color: #a0a0a0 !important;
+    /* Unified grey text */
+  }
+
+  /* White theme description fix */
+  .page-hero-quote p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    color: #555 !important;
+    /* Darker grey for white bg */
   }
 
   /* Avoid overflowing images / SVGs */

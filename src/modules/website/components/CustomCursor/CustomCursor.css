@@ -8,17 +8,28 @@
   z-index: 2000000;
 }
 
-/* Hide default cursor globally */
-html,
-body,
-a,
-button,
-[role="button"],
-.hero-btn-primary,
-.hero-btn-outline,
-.btn-primary-dark,
-.btn-outline-dark {
-  cursor: none !important;
+/* Hide default cursor globally ONLY on desktop devices */
+@media (hover: hover) and (pointer: fine) {
+
+  html,
+  body,
+  a,
+  button,
+  [role="button"],
+  .hero-btn-primary,
+  .hero-btn-outline,
+  .btn-primary-dark,
+  .btn-outline-dark {
+    cursor: none !important;
+  }
+}
+
+/* Hide the custom cursor dot/ring entirely on touch devices */
+@media (max-width: 991px),
+(hover: none) and (pointer: coarse) {
+  .custom-cursor-wrapper {
+    display: none !important;
+  }
 }
 
 .cursor-dot {
@@ -65,6 +76,7 @@ button,
   background-color: #fff;
   border: none;
   mix-blend-mode: normal;
+  display: none;
 
 }
 

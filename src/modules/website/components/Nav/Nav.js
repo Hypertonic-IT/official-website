@@ -1,172 +1,115 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './nav.css'; // Import CSS file for styling
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import './nav.css';
 
 const Navbar = () => {
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [navHidden, setNavHidden] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 991);
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 50);
+
+      // Hide navbar when scrolling down past 100px, show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setNavHidden(true);
+      } else {
+        setNavHidden(false);
+      }
+
+      lastScrollY = currentScrollY;
     };
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleDropdownHover = (e) => {
-    if (isDesktop) {
-      const dropdownMenu = e.currentTarget.querySelector('.sm-menu');
-      dropdownMenu.style.display = 'block';
-    }
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const toggleServices = (e) => {
+    e.preventDefault();
+    setIsServicesOpen(!isServicesOpen);
   };
 
-  const handleDropdownLeave = (e) => {
-    if (isDesktop) {
-      const dropdownMenu = e.currentTarget.querySelector('.sm-menu');
-      dropdownMenu.style.display = 'none';
-    }
-  };
+  // Close menu on navigation
+  useEffect(() => {
+    setIsOpen(false);
+    setIsServicesOpen(false);
+  }, [location]);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light shadow-sm bg-light fixed-top">
+    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'scrolled' : ''} ${navHidden ? 'nav-hidden' : ''}`}>
       <div className="container">
-        <Link className="navbar-brand d-flex align-items-center" to="/">
-          <img src="img/hyperlogo.png" className="logo_navbar" alt="Hyper Logo" />
-          {/* <span class="ml-3 font-weight-bold">BRAND</apan> */}
+        <Link className="navbar-brand" to="/">
+          <img src="img/hyperlogo.png" className="logo_navbar" alt="Hypertonic Logo" />
         </Link>
-        <div
-          className="navbar-toggler navbar-toggler-right border-0"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbar4"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </div>
 
-        <div className="collapse navbar-collapse hidenn" id="navbar4">
-          <ul className="navbar-nav mr-auto pl-lg-4">
-            <li className="nav-item px-lg-2 active">
-              <Link className="nav-link" to="/" data-cursor-text="Home">
-                <span className="d-inline-block d-lg-none icon-width">
-                  <i className="fas fa-home"></i>
-                </span>
-                Home
-              </Link>
+        {/* Custom Hamburger */}
+        <button
+          className={`navbar-toggler ${isOpen ? 'open' : ''}`}
+          type="button"
+          onClick={toggleMenu}
+          aria-label="Toggle navigation"
+        >
+          <div className="navbar-toggler-icon"></div>
+        </button>
+
+        <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
+          <ul className="navbar-nav me-auto">
+            <li className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>
+              <Link className="nav-link" to="/">Home</Link>
             </li>
-            <li className="nav-item px-lg-2">
-              <Link className="nav-link" to="/about" data-cursor-text="About">
-                <span className="d-inline-block d-lg-none icon-width">
-                  <i className="fas fa-user-friends"></i>
-                </span>
-                About
-              </Link>
+            <li className={`nav-item ${location.pathname === '/about' ? 'active' : ''}`}>
+              <Link className="nav-link" to="/about">About Us</Link>
             </li>
-            <li
-              className="nav-item px-lg-2 dropdown d-menu"
-              onMouseEnter={handleDropdownHover}
-              onMouseLeave={handleDropdownLeave}
-            >
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="dropdown01"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <span className="d-inline-block d-lg-none icon-width">
-                  <i className="fas fa-code"></i>
-                </span>
-                Services
-                <svg
-                  id="arrow"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className='drpp'
-                >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
+
+            <li className={`nav-item dropdown ${isServicesOpen ? 'show' : ''}`}>
+              <a className="nav-link dropdown-toggle" href="#" role="button" onClick={toggleServices}>
+                Services <i className="ri-arrow-down-s-line drpp"></i>
               </a>
-              <div className="dropdown-menu shadow-sm sm-menu" aria-labelledby="dropdown01">
-                <Link className="dropdown-item" to="/uiux">
-                  UI/UX Design
-                </Link>
-                <Link className="dropdown-item" to="/website">
-                  Website Development
-                </Link>
-                <Link className="dropdown-item" to="/app">
-                  App Development
-                </Link>
-                <Link className="dropdown-item" to="/software">
-                  Software Development
-                </Link>
-                <Link className="dropdown-item" to="/webapp">
-                  WebApp Development
-                </Link>
-                <Link className="dropdown-item" to="/saas">
-                  SaaS Platform Development
-                </Link>
-                <Link className="dropdown-item" to="/smm">
-                  Social Media Management
-                </Link>
-                <Link className="dropdown-item" to="/social">
-                  Social Media Marketing
-                </Link>
-                <Link className="dropdown-item" to="/addvertise">
-                  Advertising and Promotions
-                </Link>
+              <div className="dropdown-menu">
+                <Link className="dropdown-item" to="/uiux">UI/UX Design</Link>
+                <Link className="dropdown-item" to="/website">Website Development</Link>
+                <Link className="dropdown-item" to="/app">App Development</Link>
+                <Link className="dropdown-item" to="/software">Software Development</Link>
+                <Link className="dropdown-item" to="/webapp">WebApp Development</Link>
+                <Link className="dropdown-item" to="/saas">SaaS Development</Link>
+                <Link className="dropdown-item" to="/smm">Social Media Management</Link>
+                <Link className="dropdown-item" to="/social">Digital Marketing</Link>
               </div>
             </li>
-            <li className="nav-item px-lg-2">
-              <Link className="nav-link" to="/portfolio" data-cursor-text="Works">
-                <span className="d-inline-block d-lg-none icon-width">
-                  <i className="fas fa-folder-open"></i>
-                  {/* <i class="fa-regular fa-folder"></i> */}
-                </span>
-                Portfolio
-              </Link>
-            </li>
 
-            <li className="nav-item px-lg-2">
-              <Link className="nav-link" to="/contact" data-cursor-text="Call">
-                <span className="d-inline-block d-lg-none icon-width">
-                  <i className="fas fa-phone-alt"></i>
-                  {/* <i class=""></i> */}
-                </span>
-                Contact
-              </Link>
+            <li className={`nav-item ${location.pathname === '/portfolio' ? 'active' : ''}`}>
+              <Link className="nav-link" to="/portfolio">Portfolio</Link>
+            </li>
+            <li className={`nav-item ${location.pathname === '/contact' ? 'active' : ''}`}>
+              <Link className="nav-link" to="/contact">Contact</Link>
             </li>
           </ul>
-          <ul className="navbar-nav ml-auto mt-3 mt-lg-0 pl-lg-4">
-            <li className="nav-item">
-              <a className="nav-link" href="https://www.facebook.com/profile.php?id=61557174693878" target="_blank" rel="noreferrer">
-                <i className="fab fa-facebook icon-width"></i>
-                <span className="d-lg-none ml-3">Facebook</span>
+
+          <ul className="navbar-nav ms-auto align-items-center">
+            {/* Social Icons - Desktop only row style, mobile stacked in list */}
+            <li className="nav-item d-flex gap-2 px-lg-3 custom-social-row">
+              <a className="nav-link p-0" href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a className="nav-link p-0" href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a className="nav-link p-0" href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="Linkedin">
+                <i className="fab fa-linkedin-in"></i>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="https://www.instagram.com/hypertonicitsolutions/" target="_blank" rel="noreferrer">
-                <i className="fab fa-instagram icon-width"></i>
-                <span className="d-lg-none ml-3">Instagram</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="https://www.linkedin.com/company/90642582/admin/feed/posts/" target="_blank" rel="noreferrer">
-                <i className="fab fa-linkedin icon-width"></i>
-                <span className="d-lg-none ml-3">Linkedin</span>
-              </a>
-            </li>
-            <li className="nav-item d-none d-lg-block ms-2">
-              <a className="nav-link navbar-cta magnetic" href="/contact" data-cursor-text="Quote">Get Quote</a>
+              <Link className="nav-link navbar-cta" to="/contact" data-cursor-text="Quote">
+                Get Quote
+              </Link>
             </li>
           </ul>
         </div>

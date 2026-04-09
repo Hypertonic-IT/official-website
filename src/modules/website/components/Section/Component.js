@@ -38,6 +38,18 @@ const HeroSection = () => {
         {/* Main two-column row */}
         <div className="hero-main">
 
+          {/* MOBILE ONLY TITLE (shown in CSS only on phone) */}
+          <motion.h1
+            className="hero-title mobile-only-title"
+            initial={{ opacity: 0, x: -60, filter: "blur(10px)" }}
+            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Building Modern<br />
+            Web &amp; Software<br />
+            Experiences
+          </motion.h1>
+
           {/* LEFT: text */}
           <motion.div
             className="hero-left"
@@ -45,7 +57,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="hero-title">
+            <h1 className="hero-title desktop-only-title">
               Building Modern<br />
               Web &amp; Software<br />
               Experiences
@@ -66,80 +78,88 @@ const HeroSection = () => {
           </motion.div>
 
           {/* RIGHT: floating tech mockup */}
+
           <motion.div
             className="hero-right"
             initial={{ opacity: 0, x: 60, scale: 0.95, filter: "blur(10px)" }}
             animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           >
-            <div className="hq-ui-composition">
-              {/* Abstract Glass Frames */}
-              <div className="hq-frame hq-frame-1"></div>
-              <div className="hq-frame hq-frame-2"></div>
+            <div className="hq-ui-wrapper desktop-only-element">
+              <div className="hq-ui-composition">
+                {/* Abstract Glass Frames */}
+                <div className="hq-frame hq-frame-1"></div>
+                <div className="hq-frame hq-frame-2"></div>
 
-              {/* Code Snippet Card */}
-              <div className="hq-card hq-code-card">
-                <div className="hq-card-header">
-                  <div className="hq-dots"><span></span><span></span><span></span></div>
-                  <div className="hq-title">&lt;/Code&gt;</div>
+                {/* Code Snippet Card */}
+                <div className="hq-card hq-code-card">
+                  <div className="hq-card-header">
+                    <div className="hq-dots"><span></span><span></span><span></span></div>
+                    <div className="hq-title">&lt;/Code&gt;</div>
+                  </div>
+                  <div className="hq-code-lines">
+                    <p className="hq-code-line"><span className="hq-keyword">export const</span> Experience = () =&gt; {"{"}</p>
+                    <p className="hq-code-line pl-3"><span className="hq-keyword">return</span> (</p>
+                    <p className="hq-code-line pl-4">&lt;DigitalProduct</p>
+                    <p className="hq-code-line pl-5">performance=&#123;100&#125;</p>
+                    <p className="hq-code-line pl-5">design="clean"</p>
+                    <p className="hq-code-line pl-4">&gt;</p>
+                    <p className="hq-code-line pl-5">&lt;Technology scales=&#123;true&#125; /&gt;</p>
+                    <p className="hq-code-line pl-4">&lt;/DigitalProduct&gt;</p>
+                    <p className="hq-code-line pl-3">);</p>
+                    <p className="hq-code-line">{"}"};</p>
+                    <span className="hq-cursor">_</span>
+                  </div>
                 </div>
-                <div className="hq-code-lines">
-                  <p className="hq-code-line"><span className="hq-keyword">export const</span> Experience = () =&gt; {"{"}</p>
-                  <p className="hq-code-line pl-3"><span className="hq-keyword">return</span> (</p>
-                  <p className="hq-code-line pl-4">&lt;DigitalProduct</p>
-                  <p className="hq-code-line pl-5">performance=&#123;100&#125;</p>
-                  <p className="hq-code-line pl-5">design="clean"</p>
-                  <p className="hq-code-line pl-4">&gt;</p>
-                  <p className="hq-code-line pl-5">&lt;Technology scales=&#123;true&#125; /&gt;</p>
-                  <p className="hq-code-line pl-4">&lt;/DigitalProduct&gt;</p>
-                  <p className="hq-code-line pl-3">);</p>
-                  <p className="hq-code-line">{"}"};</p>
-                  <span className="hq-cursor">_</span>
-                </div>
-              </div>
 
-              {/* Data Graph Card */}
-              <div className="hq-card hq-graph-card">
-                <div className="hq-graph-header">
-                  <div className="hq-graph-title">Metrics</div>
-                  <i className="ri-add-line"></i>
+                {/* Data Graph Card */}
+                <div className="hq-card hq-graph-card">
+                  <div className="hq-graph-header">
+                    <div className="hq-graph-title">Metrics</div>
+                    <i className="ri-add-line"></i>
+                  </div>
+                  <svg className="hq-graph-line" viewBox="0 0 100 50">
+                    <path d="M0 40 Q 15 35, 25 30 T 45 20 T 65 25 T 85 15 T 100 5" fill="none" stroke="url(#hero-gradient)" strokeWidth="1.5" strokeDasharray="1000" strokeDashoffset="0" />
+                    <circle cx="25" cy="30" r="1.5" fill="#fff" />
+                    <circle cx="45" cy="20" r="1.5" fill="#fff" />
+                    <circle cx="65" cy="25" r="1.5" fill="#fff" />
+                    <circle cx="85" cy="15" r="1.5" fill="#fff" />
+                    <defs>
+                      <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="rgba(255,255,255,0.2)" />
+                        <stop offset="100%" stopColor="#fff" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div className="hq-graph-labels">
+                    <span>30</span><span>60</span><span>90</span><span>120</span>
+                  </div>
                 </div>
-                <svg className="hq-graph-line" viewBox="0 0 100 50">
-                  <path d="M0 40 Q 15 35, 25 30 T 45 20 T 65 25 T 85 15 T 100 5" fill="none" stroke="url(#hero-gradient)" strokeWidth="1.5" strokeDasharray="1000" strokeDashoffset="0" />
-                  <circle cx="25" cy="30" r="1.5" fill="#fff" />
-                  <circle cx="45" cy="20" r="1.5" fill="#fff" />
-                  <circle cx="65" cy="25" r="1.5" fill="#fff" />
-                  <circle cx="85" cy="15" r="1.5" fill="#fff" />
-                  <defs>
-                    <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="rgba(255,255,255,0.2)" />
-                      <stop offset="100%" stopColor="#fff" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-                <div className="hq-graph-labels">
-                  <span>30</span><span>60</span><span>90</span><span>120</span>
-                </div>
-              </div>
 
-              {/* Floating Element 1 */}
-              <div className="hq-float hq-float-1">
-                <i className="ri-settings-4-fill"></i>
-                <div className="hq-bar-group">
-                  <div className="hq-bar hq-bar-1"></div>
-                  <div className="hq-bar hq-bar-2"></div>
+                {/* Floating Element 1 */}
+                <div className="hq-float hq-float-1">
+                  <i className="ri-settings-4-fill"></i>
+                  <div className="hq-bar-group">
+                    <div className="hq-bar hq-bar-1"></div>
+                    <div className="hq-bar hq-bar-2"></div>
+                  </div>
                 </div>
-              </div>
 
-              {/* Floating Element 2 */}
-              <div className="hq-float hq-float-2">
-                <i className="ri-list-check-2"></i>
-                <div className="hq-bar-group">
-                  <div className="hq-bar hq-bar-3"></div>
-                  <div className="hq-bar hq-bar-4"></div>
+                {/* Floating Element 2 */}
+                <div className="hq-float hq-float-2">
+                  <i className="ri-list-check-2"></i>
+                  <div className="hq-bar-group">
+                    <div className="hq-bar hq-bar-3"></div>
+                    <div className="hq-bar hq-bar-4"></div>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <div className="mobile-only-element">
+              <video src="/img/hypertonicVideo.mp4" autoPlay loop muted playsInline className="hero-video-element" />
+            </div>
+
           </motion.div>
 
         </div>

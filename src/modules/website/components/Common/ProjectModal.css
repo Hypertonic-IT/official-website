@@ -1,0 +1,355 @@
+/* ── Project Modal - Ultra Premium ── */
+.pm-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    padding: 20px;
+}
+
+.pm-shell {
+    display: flex;
+    width: 100%;
+    max-width: 960px;
+    max-height: 88vh;
+    background: #0c0c0c;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.03),
+        0 60px 120px rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+/* ── Left Panel ── */
+.pm-left {
+    position: relative;
+    width: 380px;
+    flex-shrink: 0;
+    background: #050505;
+    overflow: hidden;
+}
+
+.pm-left-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.pm-shell:hover .pm-left-img {
+    transform: scale(1.04);
+}
+
+.pm-left-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
+}
+
+.pm-company-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+/* Corner accents */
+.pm-corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+}
+
+.pm-corner-tl {
+    top: 16px;
+    left: 16px;
+    border-top: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px 0 0 0;
+}
+
+.pm-corner-br {
+    bottom: 16px;
+    right: 16px;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0 0 3px 0;
+}
+
+/* ── Right Panel ── */
+.pm-right {
+    flex: 1;
+    padding: 50px 44px;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* scrollbar */
+.pm-right::-webkit-scrollbar {
+    width: 4px;
+}
+
+.pm-right::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pm-right::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+}
+
+/* Close btn */
+.pm-close {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.pm-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Header */
+.pm-right-header {
+    margin-bottom: 36px;
+}
+
+.pm-eyebrow {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.25);
+    margin-bottom: 12px;
+}
+
+.pm-right-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.pm-right-sub {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Form */
+.pm-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pm-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.pm-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pm-field label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.pm-input {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.25s, background 0.25s;
+    width: 100%;
+}
+
+.pm-input::placeholder {
+    color: rgba(255, 255, 255, 0.18);
+}
+
+.pm-input:focus {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.pm-input.error {
+    border-color: rgba(255, 80, 80, 0.5);
+}
+
+.pm-err {
+    font-size: 11px;
+    color: #ff6b6b;
+}
+
+/* Submit */
+.pm-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 14px;
+    padding: 16px 28px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    margin-top: 4px;
+    letter-spacing: -0.3px;
+}
+
+.pm-submit:hover {
+    background: rgba(255, 255, 255, 0.88);
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Success state */
+.pm-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+    min-height: 300px;
+    padding: 30px 0;
+}
+
+.pm-success-ring {
+    width: 72px;
+    height: 72px;
+}
+
+.pm-checkmark {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+}
+
+.pm-checkmark-circle {
+    stroke: #00cccc;
+    stroke-width: 2;
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: pm-stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.pm-checkmark-check {
+    stroke: #00cccc;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: pm-stroke 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.5s forwards;
+}
+
+@keyframes pm-stroke {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.pm-success h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.pm-success p {
+    font-size: 15px;
+    color: #666;
+    max-width: 280px;
+    line-height: 1.6;
+}
+
+.pm-close-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.25s ease;
+}
+
+.pm-close-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Responsive ── */
+@media (max-width: 780px) {
+    .pm-shell {
+        flex-direction: column;
+        max-height: 92vh;
+        overflow-y: auto;
+    }
+
+    .pm-left {
+        width: 100%;
+        height: 220px;
+    }
+
+    .pm-left-img {
+        object-fit: cover;
+        padding: 0;
+    }
+
+    .pm-right {
+        padding: 36px 24px;
+    }
+
+    .pm-row {
+        grid-template-columns: 1fr;
+    }
+}

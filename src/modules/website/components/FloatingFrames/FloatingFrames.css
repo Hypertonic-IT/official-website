@@ -1,0 +1,183 @@
+.floating-tech-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+    perspective: 1200px;
+    background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #000 100%);
+}
+
+.tech-grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at center, black 0%, transparent 80%);
+}
+
+.tech-el {
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+/* Code Snippet Styles */
+.code-snippet {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 160px;
+}
+
+.code-header {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.code-header span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.code-line {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 1px;
+}
+
+.code-line.medium {
+    width: 70%;
+}
+
+.code-line.short {
+    width: 40%;
+}
+
+.code-line.indent {
+    margin-left: 10px;
+    width: calc(100% - 10px);
+}
+
+/* Tech Frame Styles */
+.tech-frame-inner {
+    width: 80px;
+    height: 80px;
+    border: 0.5px solid rgba(255, 255, 255, 0.02);
+    position: relative;
+}
+
+.frame-cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    transform: translate(-50%, -50%);
+}
+
+.frame-cross::before,
+.frame-cross::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.frame-cross::before {
+    width: 100%;
+    height: 1px;
+    top: 50%;
+}
+
+.frame-cross::after {
+    height: 100%;
+    width: 1px;
+    left: 50%;
+}
+
+.corner {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.corner.tl {
+    top: -1px;
+    left: -1px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner.br {
+    bottom: -1px;
+    right: -1px;
+    border-left: none;
+    border-top: none;
+}
+
+/* New Tech Elements */
+.tech-bracket,
+.tech-binary {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(255, 255, 255, 0.07);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.tech-bracket {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* Accent Styles */
+.tech-accent-inner {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accent-dot {
+    width: 3px;
+    height: 3px;
+    background: #00cccc;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 204, 204, 0.6);
+}
+
+.vignette-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+@keyframes floatAnim {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotateX(10deg) rotateY(10deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotateX(-10deg) rotateY(-10deg);
+    }
+}

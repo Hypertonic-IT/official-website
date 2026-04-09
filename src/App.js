@@ -19,6 +19,7 @@ import Privacy from "./modules/website/pages/Privacy/Privacy";
 import NotFound from "./modules/website/pages/NotFound/NotFound";
 import CustomCursor from "./modules/website/components/CustomCursor/CustomCursor";
 import ParticlesBackground from "./modules/website/components/Particles/ParticlesBackground";
+import FloatingFrames from "./modules/website/components/FloatingFrames/FloatingFrames";
 
 import "./App.css";
 import "./fonts/taile.ttf";
@@ -27,6 +28,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <FloatingFrames />
         <ParticlesBackground />
         <CustomCursor />
         <Routes>

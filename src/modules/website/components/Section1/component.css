@@ -1,24 +1,29 @@
-/* ===================== ABOUT SECTION ===================== */
-.about_top {
-    margin-top: 10px;
-    padding: 80px 0;
+/* ===================== ABOUT SECTION v3 (Refactored - Exact Hero Sync) ===================== */
+.about-section {
     position: relative;
+    width: 100%;
+    padding-top: 10px;
+    overflow: hidden;
+    background: transparent;
 }
 
-.about_heading {
-    font-size: 38px;
+/* Header (Above Main Flex) */
+.about-header {
+    padding: 40px 8% 0;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
+.about-section-title {
+    font-size: clamp(32px, 4.5vw, 42px);
     font-weight: 800;
-    color: #ffffff;
+    color: #fff;
     letter-spacing: -0.5px;
     margin-bottom: 0;
 }
 
-.tslap {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.heading_line {
+.about-line {
     height: 2px !important;
     background: rgba(255, 255, 255, 0.2);
     margin: 12px 0 0 0;
@@ -26,16 +31,41 @@
     border: none;
 }
 
-.we_comme {
-    font-size: 42px;
+/* Main row - EXACT SAME AS .hero-main logic */
+.about-main {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding: 40px 6% 10px 8%;
+    gap: 40px;
+}
+
+.about-left {
+    flex: 0 0 auto;
+    width: 48%;
+    /* Slightly wider for the about text */
+    max-width: 600px;
+}
+
+.about-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.we-comme {
+    font-size: clamp(28px, 4vw, 42px);
     font-weight: 800;
     color: #ffffff;
     line-height: 1.1;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
+    letter-spacing: -1.5px;
+    margin-bottom: 25px;
 }
 
-.main_abouttitle {
+.about-text {
     color: #888;
     font-size: 16px;
     font-weight: 400;
@@ -43,47 +73,31 @@
     line-height: 1.8;
 }
 
-/* Fix for About Image */
-.about_immg {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.5s ease;
-    object-fit: cover;
-}
-
-.padd__inng {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0px;
-}
-
-/* About stats row */
-.about_stats_row {
+/* Stats Row */
+.about-stats-row {
     display: flex;
     gap: 32px;
-    margin-top: 30px;
+    margin: 30px 0;
     flex-wrap: wrap;
 }
 
-.about_stat {
+.about-stat {
     border-left: 2px solid rgba(255, 255, 255, 0.15);
     padding-left: 16px;
 }
 
-.about_stat_number {
+.about-stat-number {
     font-size: 28px;
     font-weight: 800;
     color: #ffffff;
     margin: 0;
-    line-height: 1;
+    line-height: 1.1;
 }
 
-.about_stat_label {
+.about-stat-label {
     font-size: 12px;
     color: #666;
-    margin: 0;
+    margin-top: 4px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -91,103 +105,98 @@
 .readaboutbtn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     background: #ffffff;
     color: #000;
     border: none;
     border-radius: 100px;
     padding: 13px 32px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    margin-top: 28px;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
     font-family: 'Inter', sans-serif;
 }
 
 .readaboutbtn:hover {
-    background: rgba(255, 255, 255, 0.85);
-    transform: translateY(-2px);
-    color: #000;
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
 }
 
-/* Floating UI Composition - SYNCHRONIZED WITH HERO DESIGN */
+/* Fallback Image Design */
+.custom-about-img-wrap {
+    width: 100%;
+    max-width: 440px;
+}
+
+.about-img {
+    width: 100%;
+
+}
+
+/* --- Abstract Dashboard Visuals --- */
 .about-ui-composition {
     position: relative;
-    width: 100%;
-    max-width: 530px;
-    height: 480px;
-    perspective: 1200px;
-    animation: hqHeroFloat 8s ease-in-out infinite;
+    width: 500px;
+    /* Matched to hero context */
+    height: 420px;
+    perspective: 1000px;
+    animation: hqAboutFloat 8s ease-in-out infinite;
     transform-style: preserve-3d;
     z-index: 2;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.about-frame,
-.hq-frame {
+.about-frame {
     position: absolute;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.02);
-    transform-style: preserve-3d;
-    border-radius: 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.01);
 }
 
 .about-frame-1 {
     width: 130px;
     height: 130px;
-    top: -25px;
-    left: 45px;
-    transform: translateZ(-60px) rotateX(20deg) rotateY(15deg);
+    top: -20px;
+    left: 50px;
+    transform: translateZ(-50px) rotateX(15deg) rotateY(18deg);
 }
 
 .about-frame-2 {
-    width: 90px;
-    height: 90px;
-    top: -45px;
-    left: 195px;
-    border-width: 2px;
-    transform: translateZ(-80px) rotateX(10deg) rotateY(25deg);
-}
-
-.about-frame-2 {
-    width: 120px;
-    height: 120px;
-    bottom: 40px;
-    left: 10px;
-    border-width: 2px;
-    transform: translateZ(-100px) rotateX(-10deg) rotateY(20deg);
+    width: 100px;
+    height: 100px;
+    bottom: 20px;
+    right: 80px;
+    transform: translateZ(-70px) rotateX(-12deg) rotateY(-20deg);
 }
 
 .about-card {
     position: absolute;
     background: rgba(15, 15, 15, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
+    border-radius: 14px;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
     transform-style: preserve-3d;
 }
 
 .about-code-card {
-    width: 310px;
-    top: 55px;
-    left: -15px;
-    transform: translateZ(25px) rotateY(5deg);
+    width: 300px;
+    top: 50px;
+    left: -10px;
+    transform: translateZ(20px) rotateY(4deg);
     padding: 18px;
 }
 
 .about-card-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 11px;
-    margin-bottom: 13px;
+    padding-bottom: 10px;
+    align-items: center;
 }
 
 .about-dots {
@@ -213,8 +222,8 @@
     background: #27c93f;
 }
 
-.about-title {
-    font-size: 11px;
+.about-card-title {
+    font-size: 13px;
     color: #888;
     font-family: monospace;
 }
@@ -222,220 +231,193 @@
 .about-code-lines {
     font-family: monospace;
     font-size: 11px;
-    line-height: 1.6;
     color: #ccc;
 }
 
-.about-code-line {
-    margin: 0;
+.about-keyword {
+    color: #888;
 }
 
-.about-keyword {
-    color: #aaa;
+.pl-3 {
+    padding-left: 15px;
+}
+
+.pl-4 {
+    padding-left: 25px;
+}
+
+.pl-5 {
+    padding-left: 35px;
 }
 
 .about-graph-card {
-    width: 310px;
-    height: 210px;
-    top: 140px;
-    right: -25px;
-    transform: translateZ(55px) rotateY(-8deg);
+    width: 300px;
+    height: 200px;
+    bottom: 0px;
+    right: -15px;
+    transform: translateZ(50px) rotateY(-8deg);
     padding: 22px;
 }
 
 .about-graph-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 15px;
-    color: #fff;
+    align-items: center;
 }
 
 .about-graph-title {
     font-size: 13px;
     font-weight: 500;
+    color: #fff;
 }
 
 .about-graph-line {
     width: 100%;
     height: auto;
+    display: block;
 }
 
 .about-graph-labels {
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 10px;
+}
+
+.about-graph-labels span {
     font-size: 10px;
-    color: #666;
-    margin-top: 10px;
+    color: #555;
+    font-weight: 600;
 }
 
 .about-float {
     position: absolute;
+    padding: 10px 14px;
+    background: rgba(20, 20, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: rgba(20, 20, 20, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 8px;
-    padding: 10px 14px;
+    gap: 10px;
     backdrop-filter: blur(10px);
     transform-style: preserve-3d;
 }
 
-.about-float i {
-    font-size: 18px;
-    color: #fff;
-}
-
-.about-bar-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.about-bar {
-    height: 4px;
-    border-radius: 2px;
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.about-bar-1 {
-    width: 40px;
-    background: rgba(255, 255, 255, 0.7);
-}
-
-.about-bar-2 {
-    width: 25px;
-}
-
-.about-bar-3 {
-    width: 35px;
-    background: rgba(255, 255, 255, 0.6);
-}
-
 .about-float-1 {
-    bottom: 85px;
-    left: 45px;
-    animation: hqAboutFloatMinor1 4s ease-in-out infinite alternate;
+    bottom: 100px;
+    left: 40px;
+    animation: aboutFloatMinor 4s ease-in-out infinite alternate;
 }
 
 .about-float-2 {
-    bottom: 0px;
-    right: 45px;
-    animation: hqAboutFloatMinor2 5s ease-in-out infinite alternate-reverse;
+    bottom: -20px;
+    right: 40px;
+    animation: aboutFloatMinor 5s ease-in-out infinite alternate-reverse;
 }
 
-@keyframes hqAboutFloatMinor1 {
-    0% {
-        transform: translateZ(85px) rotateY(15deg) translateY(0);
-    }
+@keyframes hqAboutFloat {
 
+    0%,
     100% {
-        transform: translateZ(85px) rotateY(15deg) translateY(-16px);
-    }
-}
-
-@keyframes hqAboutFloatMinor2 {
-    0% {
-        transform: translateZ(65px) rotateY(-10deg) translateY(0);
-    }
-
-    100% {
-        transform: translateZ(65px) rotateY(-10deg) translateY(-16px);
-    }
-}
-
-@keyframes hqHeroFloat {
-    0% {
         transform: translateY(0px) rotate(-1deg);
     }
 
     50% {
         transform: translateY(-20px) rotate(0.5deg);
     }
+}
 
-    100% {
-        transform: translateY(0px) rotate(-1deg);
+@keyframes aboutFloatMinor {
+    from {
+        transform: translateZ(80px) translateY(0);
+    }
+
+    to {
+        transform: translateZ(80px) translateY(-15px);
     }
 }
 
-
-/* GRANULAR RESPONSIVE SCALING & OVERLAP FIX */
-@media(max-width: 1440px) {
-    .about-ui-composition {
-        transform: scale(0.9);
+/* ================== RESPONSIVE ================== */
+@media (max-width: 1024px) {
+    .about-main {
+        padding-left: 5%;
+        padding-right: 5%;
+        gap: 30px;
     }
-}
 
-@media(max-width: 1240px) {
     .about-ui-composition {
         transform: scale(0.75);
-    }
-
-    .about_title_heading,
-    .crousel_text_headung1 {
-        font-size: clamp(28px, 4vw, 42px) !important;
+        transform-origin: right center;
     }
 }
 
-@media(max-width: 1100px) {
-    .about-ui-composition {
-        margin: 40px auto 30px;
-        transform: scale(0.9);
-        height: 480px;
+@media (max-width: 850px) {
+    .about-main {
+        flex-direction: column;
+        text-align: left;
+        gap: 40px;
+        padding: 40px 6% 0px;
     }
 
-    .my_reveers,
-    .top-rw {
-        flex-direction: column !important;
+    .about-left {
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+        order: 3;
+    }
+
+    .about-right {
+        order: 2;
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .about-header {
+        order: 1;
         text-align: center;
-        gap: 20px 0 !important;
+        padding: 60px 8% 0;
     }
 
-    .my_reveers>div,
-    .top-rw>div {
-        width: 100% !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        max-width: 100% !important;
+    .about-line {
+        margin: 12px auto 0;
     }
 
-    .divider-line,
-    .heading_line1 {
-        margin: 0 auto 30px !important;
-    }
-
-    .about_stats_row,
-    .carousel-controls {
+    .about-stats-row {
         justify-content: center;
     }
-}
 
-@media(max-width: 768px) {
-    .about-ui-composition {
-        transform: scale(0.75);
-        height: 380px;
-        margin: 20px auto 0;
-    }
-
-    .about_title_heading,
-    .crousel_text_headung1 {
-        font-size: 30px !important;
+    .desktop-only-element {
+        display: none !important;
     }
 }
 
-@media(max-width: 576px) {
-    .about-ui-composition {
-        transform: scale(0.6);
-        height: 300px;
-    }
-}
+@media (max-width: 576px) {
+    .about-section {
+        padding: 40px 0;
+        padding-top: 0px;
 
-@media(max-width: 480px) {
+    }
+
+    .we-comme {
+        margin-bottom: 10px;
+    }
+
     .about-ui-composition {
-        transform: scale(0.45);
-        height: 240px;
-        margin-top: -40px;
-        margin-bottom: -30px;
+        display: none;
+    }
+
+    .about-main {
+        padding-top: 10px;
+    }
+
+    .about-header {
+        padding-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .custom-about-img-wrap {
+        transform: scale(1.0);
     }
 }
