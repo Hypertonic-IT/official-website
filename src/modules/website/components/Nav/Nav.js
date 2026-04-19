@@ -16,9 +16,13 @@ const Navbar = () => {
       const currentScrollY = window.scrollY;
       setScrolled(currentScrollY > 50);
 
-      // Hide navbar when scrolling down past 100px, show when scrolling up
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setNavHidden(true);
+      // On mobile (< 992px), ALWAYS keep navbar visible — never hide
+      if (window.innerWidth >= 992) {
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          setNavHidden(true);
+        } else {
+          setNavHidden(false);
+        }
       } else {
         setNavHidden(false);
       }
@@ -37,6 +41,16 @@ const Navbar = () => {
     setIsServicesOpen(!isServicesOpen);
   };
 
+  // Lock body scroll when mobile sidebar is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
   // Close menu on navigation
   useEffect(() => {
     setIsOpen(false);
@@ -44,7 +58,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'scrolled' : ''} ${navHidden ? 'nav-hidden' : ''}`}>
+    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'scrolled' : ''} ${navHidden ? 'nav-hidden' : ''} ${isOpen ? 'sidebar-open' : ''}`}>
       <div className="container">
         <Link className="navbar-brand" to="/">
           <img src="img/hyperlogo.png" className="logo_navbar" alt="Hypertonic Logo" />
@@ -93,9 +107,9 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <ul className="navbar-nav ms-auto align-items-center">
+          <ul className="navbar-nav ms-auto align-items-lg-center align-items-start">
             {/* Social Icons - Desktop only row style, mobile stacked in list */}
-            <li className="nav-item d-flex gap-2 px-lg-3 custom-social-row">
+            <li className="nav-item d-flex custom-social-row px-lg-2">
               <a className="nav-link p-0" href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
                 <i className="fab fa-facebook-f"></i>
               </a>

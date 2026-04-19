@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import Home from "./modules/website/pages/Home/Home";
@@ -20,17 +20,45 @@ import NotFound from "./modules/website/pages/NotFound/NotFound";
 import CustomCursor from "./modules/website/components/CustomCursor/CustomCursor";
 import ParticlesBackground from "./modules/website/components/Particles/ParticlesBackground";
 import FloatingFrames from "./modules/website/components/FloatingFrames/FloatingFrames";
+import SplashScreen from "./modules/website/components/SplashScreen/SplashScreen";
 
 import "./App.css";
 import "./fonts/taile.ttf";
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
   return (
     <HelmetProvider>
+      {/* Splash screen — only on first load */}
+      {showSplash && <SplashScreen onDone={() => setShowSplash(false)} />}
       <Router>
         <FloatingFrames />
         <ParticlesBackground />
         <CustomCursor />
+
+        {/* ── Fixed H-shape contact sidebar — visible on all pages ── */}
+        <div className="h-sidebar">
+          {/* Left arm: Email */}
+          <a href="mailto:hypertonicitsolutions@gmail.com" className="h-sidebar__arm h-sidebar__arm--left">
+            <span className="h-sidebar__line" />
+            <span className="h-sidebar__label">
+              <i className="fas fa-envelope h-sidebar__icon" />
+              hypertonicitsolutions@gmail.com
+            </span>
+            <span className="h-sidebar__line" />
+          </a>
+
+          {/* Right arm: Phone */}
+          <a href="tel:+918130501014" className="h-sidebar__arm h-sidebar__arm--right">
+            <span className="h-sidebar__line" />
+            <span className="h-sidebar__label">
+              <i className="fas fa-phone-alt h-sidebar__icon" />
+              +91 81305 01014
+            </span>
+            <span className="h-sidebar__line" />
+          </a>
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

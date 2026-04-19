@@ -44,9 +44,9 @@ const CarouselSection = () => {
       <div className="about-container">
 
         <div className="about-header text-center" style={{ paddingTop: '20px' }}>
-          <p className="section-label" style={{ color: '#888', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '11px', marginBottom: '10px' }}>Capabilities</p>
           <h2 className="about-section-title">What We Actually Do</h2>
-          <div className="about-line" style={{ margin: '15px auto 0' }}></div>
+          <p className="section-label" style={{ color: '#888', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '11px', marginBottom: '10px' }}>Capabilities</p>
+          {/* <div className="about-line" style={{ margin: '15px auto 0' }}></div> */}
 
           {/* Mobile Fallback Image */}
           <img

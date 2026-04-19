@@ -73,7 +73,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="ct-section">
+    <section className="ct-section" aria-labelledby="contact-heading">
       {/* Decorative background elements */}
       <div className="ct-bg-orb ct-bg-orb-1" />
       <div className="ct-bg-orb ct-bg-orb-2" />
@@ -89,7 +89,7 @@ const Contact = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={revealUp}
         >
-          <h2 className="ct-main-title">Get In Touch</h2>
+          <h2 id="contact-heading" className="ct-main-title">Get In Touch</h2>
           <p className="section-label">
             <span className="sv2-highlight">Connect</span> with us
           </p>
@@ -267,7 +267,7 @@ const Contact = () => {
 
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

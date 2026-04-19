@@ -11,14 +11,19 @@ function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact Us - Hypertonic IT Solutions</title>
-        <meta name="description" content="Get in touch with Hypertonic IT Solutions for expert IT services, including website development, app development, and custom software solutions." />
+        <title>Contact Us | Hypertonic IT Solutions - Start Your Project</title>
+        <meta name="description" content="Ready to start your digital journey? Contact Hypertonic IT Solutions today. We're here to discuss your project ideas and provide expert consultation." />
+        <meta name="keywords" content="Contact Hypertonic IT, IT Consultation, Hire Developers, Web Agency Contact, Start a Project" />
+        <link rel="canonical" href="https://hypertonic.co.in/contact" />
+        <meta property="og:title" content="Contact Us | Hypertonic IT Solutions - Start Your Project" />
+        <meta property="og:url" content="https://hypertonic.co.in/contact" />
       </Helmet>
       <Nav />
-      <Section21 />
-      <Section5 />
-      <Section23 />
-
+      <main>
+        <Section21 />
+        <Section5 />
+        <Section23 />
+      </main>
       <Footer />
     </>
   );

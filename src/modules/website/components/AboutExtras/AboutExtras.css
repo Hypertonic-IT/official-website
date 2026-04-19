@@ -1,0 +1,460 @@
+/* ================================================================
+   ABOUT EXTRAS
+   REDESIGN 2026 (Premium Monochrome)
+   Sections: Our Story, Why Choose Us, Stats, Vision
+   ================================================================ */
+
+:root {
+    --ae-accent: #ffffff;
+    --ae-bg-dark: #080808;
+    --ae-glass: rgba(255, 255, 255, 0.03);
+    --ae-border: rgba(255, 255, 255, 0.08);
+    --ae-grey: #666666;
+}
+
+/* Global Reset & Reveal */
+#aboutpage,
+.extras-section {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    box-sizing: border-box;
+    background: var(--ae-bg-dark);
+    color: #fff;
+}
+
+/* Same animation created for all sections (Fade-in + Slide-up) */
+.extras-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.extras-section.extras-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.extras-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Shared Typography */
+.extras-eyebrow {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    color: var(--ae-grey);
+    margin-bottom: 20px;
+}
+
+.extras-heading {
+    font-size: clamp(32px, 4.5vw, 42px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin: 0 0 24px;
+}
+
+.extras-divider {
+    width: 48px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    margin: 0 0 32px;
+}
+
+.ae-body {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #aaaaaa;
+    margin-bottom: 24px;
+}
+
+.extras-header-centered {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.extras-divider-center {
+    margin: 0 auto 32px;
+}
+
+/* 2. OUR PHILOSOPHY (Engineering DNA) */
+.philosophy-section {
+    padding: 90px 0;
+    position: relative;
+    background: #050505;
+}
+
+.philosophy-section .extras-container {
+    max-width: 1200px;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.philosophy-header {
+    max-width: 500px;
+}
+
+.philosophy-title {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.philosophy-body {
+    font-size: 16px;
+    color: #aaaaaa;
+    line-height: 1.8;
+}
+
+/* Pillar Cards (Bento-Light) */
+.philosophy-pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.philosophy-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+.philosophy-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.philosophy-card-icon {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.philosophy-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.philosophy-card-text {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* Accent lines */
+.philosophy-card-featured {
+    border-top: 2px solid #fff;
+}
+
+/* 4. WHY CHOOSE US (Monochrome Bento) */
+.why-choose-section {
+    padding: 100px 0px 80px 0px;
+}
+
+.why-choose-bento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    /* Make rows equal height without forcing an arbitrary fixed pixel value */
+    gap: 20px;
+}
+
+.why-choose-card {
+    position: relative;
+    background: var(--ae-glass);
+    border: 1px solid var(--ae-border);
+    border-radius: 20px;
+    padding: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center the payload to keep padding uniform conceptually */
+    transition: all 0.4s ease;
+}
+
+.why-choose-card-large {
+    grid-column: span 2;
+}
+
+.why-choose-card-small {
+    grid-column: span 1;
+}
+
+.why-choose-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Mouse Spotlight Effect */
+.why-choose-spotlight {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(400px circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.05), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.why-choose-card:hover .why-choose-spotlight {
+    opacity: 1;
+}
+
+.why-choose-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 24px;
+    /* Fix: removed auto to avoid pushing text down */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.why-choose-card:hover .why-choose-icon {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.why-choose-title {
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    z-index: 2;
+}
+
+.why-choose-desc {
+    position: relative;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    z-index: 2;
+}
+
+.why-choose-edge-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.03), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.why-choose-card:hover .why-choose-edge-glow {
+    opacity: 1;
+}
+
+/* 6. STATS STRIP */
+.stats-section {
+    padding: 80px 0;
+    border-top: 1px solid var(--ae-border);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats-item {
+    text-align: center;
+}
+
+.stats-number {
+    display: block;
+    font-size: 56px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.stats-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.stats-separator {
+    width: 1px;
+    height: 50px;
+    background: var(--ae-border);
+}
+
+/* 8. VISION SECTION */
+.vision-section {
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+}
+
+.vision-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.vision-orb-one {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -100px;
+}
+
+.vision-orb-two {
+    width: 300px;
+    height: 300px;
+    bottom: -50px;
+    right: -50px;
+}
+
+.vision-container {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+}
+
+.vision-heading {
+    font-size: clamp(32px, 5.5vw, 60px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.vision-body {
+    font-size: 17px;
+    color: #aaaaaa;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .why-choose-bento {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* All About sections get consistent vertical padding */
+    .philosophy-section {
+        padding: 60px 0px 0px 0px !important;
+    }
+
+    .why-choose-section {
+        padding: 0 0 !important;
+    }
+
+    .stats-section {
+        padding: 60px 0 !important;
+    }
+
+    .vision-section {
+        padding: 70px 0 !important;
+    }
+
+    /* Container side padding for all extras */
+    .extras-container {
+        padding: 0 20px;
+    }
+
+    /* OurStory grid → single column */
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Philosophy heading left-align & margin */
+    .philosophy-header {
+        max-width: 100%;
+    }
+
+    /* Pillar cards → stacked */
+    .philosophy-pillars {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .philosophy-card {
+        padding: 28px 20px;
+        border-radius: 12px;
+        border-top: 1px solid rgb(255, 255, 255);
+
+    }
+
+    /* Why Choose Us → all single column */
+    .why-choose-bento {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .why-choose-card-large,
+    .why-choose-card-small {
+        grid-column: span 1;
+    }
+
+    .why-choose-card {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    /* Stats strip → stacked */
+    .stats-container {
+        flex-direction: column;
+        gap: 36px;
+        align-items: flex-start;
+        padding: 0 20px;
+    }
+
+    .stats-separator {
+        display: none;
+    }
+
+    .stats-item {
+        text-align: left;
+    }
+
+    /* Vision section */
+    .vision-container {
+        padding: 0;
+    }
+
+    /* Section headings centered on mobile */
+    .extras-header-centered {
+        margin-bottom: 36px;
+    }
+}

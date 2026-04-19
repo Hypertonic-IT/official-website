@@ -8,18 +8,14 @@ const Software = () => {
   return (
     <>
       <Helmet>
-        <title>Terms and Conditions - Hypertonic IT Solutions</title>
-        <meta
-          name="description"
-          content="Read the Terms and Conditions of Hypertonic IT Solutions. Understand our policies for website usage, services, and privacy."
-        />
-        <meta
-          name="keywords"
-          content="Terms and Conditions, Website Usage, Policies, Hypertonic IT Solutions"
-        />
+        <title>Terms of Service | Hypertonic IT Solutions</title>
+        <meta name="description" content="Read our terms of service to understand the guidelines and rules for using Hypertonic IT Solutions' website and services." />
+        <link rel="canonical" href="https://hypertonic.co.in/term" />
       </Helmet>
       <Nav />
-      <Section24 />
+      <main>
+        <Section24 />
+      </main>
       <Footer />
     </>
   );
